@@ -37,7 +37,7 @@ group :development, :test do
 end
 
 group :development do
-	gem 'annotate', '~> 3.1', '>= 3.1.1'
+  gem 'annotate', '~> 3.1', '>= 3.1.1'
   gem 'listen', '~> 3.2'
   gem 'rubocop', '~> 0.82.0', require: false
   gem 'rubocop-rspec', '~> 1.38', '>= 1.38.1', require: false
