@@ -25,7 +25,7 @@ gem 'puma', '~> 4.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,6 +38,7 @@ end
 
 group :development do
   gem 'annotate', '~> 3.1', '>= 3.1.1'
+  gem 'foreman', '~> 0.87.1'
   gem 'listen', '~> 3.2'
   gem 'rubocop', '~> 0.82.0', require: false
   gem 'rubocop-rspec', '~> 1.38', '>= 1.38.1', require: false
