@@ -1,15 +1,50 @@
-version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2 
-
+version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
+      - image: circleci/ruby:2.5.3-node-browsers-legacy
+        environment:
+          RAILS_ENV: test
+          PGHOST: 127.0.0.1
+          POSTGRES_USER: circleci_user
+          POSTGRES_PASSWORD: password
+          POSTGRES_PORT: 5432
+
+      - image: circleci/postgres:10-alpine-postgis
+        environment:
+          POSTGRES_USER: circleci_user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: MCMAPI_circleci_db
+
     steps:
       - checkout
+
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: install bundler
+          command: gem install bundler:2.0.1
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run: bundle exec rails db:create db:migrate
+
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            bundle exec rspec --format progress \
