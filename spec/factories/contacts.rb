@@ -24,5 +24,11 @@
 #
 FactoryBot.define do
   factory :contact do
+    email { Faker::Internet.email }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    phone_number { Faker::PhoneNumber.phone_number_with_country_code }
+    position { Faker::Company.profession }
+    job_application { create(:job_application) }
   end
 end
