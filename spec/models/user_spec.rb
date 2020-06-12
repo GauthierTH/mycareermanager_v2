@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
     end
 
     describe "#email" do
-      before { create(:user) }
+      subject { build(:user) }
 
       it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
     end
