@@ -25,5 +25,12 @@
 #
 FactoryBot.define do
   factory :job_application do
+    company_name { Faker::Company.name }
+    job_description { Faker::Lorem.sentences(number: 5) }
+    job_offer_link { Faker::Internet.url }
+    note { Faker::Lorem.sentences(number: 5) }
+    position { Faker::Company.profession }
+    status { ['identified', 'applied', 'in_progress'].sample }
+    user { create(:user) }
   end
 end

@@ -23,5 +23,10 @@
 #
 FactoryBot.define do
   factory :step do
+    category { ['interview', 'phone call', 'technical test', 'follow-up', 'application sent'].sample }
+    date { DateTime.now }
+    description { Faker::Lorem.sentences(number: 2) }
+    is_done { false }
+    job_application { create(:job_application) }
   end
 end
