@@ -10,14 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_06_10_150721) do
+=======
+ActiveRecord::Schema.define(version: 2020_06_11_164808) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "position"
+    t.string "phone_number"
+    t.string "email"
+    t.bigint "job_application_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_application_id"], name: "index_contacts_on_job_application_id"
+  end
+
+  create_table "job_applications", force: :cascade do |t|
+    t.string "company_name"
+    t.string "position"
+    t.string "status"
+    t.string "job_offer_link"
+    t.text "job_description"
+    t.text "note"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_job_applications_on_user_id"
+  end
+
   create_table "jwt_blacklist", force: :cascade do |t|
     t.string "jti", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.string "category"
+    t.text "description"
+    t.datetime "date"
+    t.boolean "is_done", default: false, null: false
+    t.bigint "job_application_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_application_id"], name: "index_steps_on_job_application_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,8 +68,12 @@ ActiveRecord::Schema.define(version: 2020_06_10_150721) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "job_applications"
+  add_foreign_key "job_applications", "users"
+  add_foreign_key "steps", "job_applications"
 end
