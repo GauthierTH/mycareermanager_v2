@@ -73,5 +73,3 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-
-require_relative './support/devise'
