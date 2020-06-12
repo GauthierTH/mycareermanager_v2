@@ -5,10 +5,10 @@
 # Table name: steps
 #
 #  id                 :bigint           not null, primary key
+#  category           :string
 #  date               :datetime
 #  description        :text
 #  is_done            :boolean          default(FALSE), not null
-#  type               :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  job_application_id :bigint           not null
