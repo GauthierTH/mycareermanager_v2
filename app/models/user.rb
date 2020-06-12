@@ -29,5 +29,5 @@ class User < ApplicationRecord
   has_many :job_applications
 
   validates :username, presence: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, case_sensitive: false
 end
