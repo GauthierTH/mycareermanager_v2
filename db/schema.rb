@@ -46,11 +46,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_164808) do
   end
 
   create_table "steps", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string "type"
-=======
     t.string "category"
->>>>>>> master
     t.text "description"
     t.datetime "date"
     t.boolean "is_done", default: false, null: false
