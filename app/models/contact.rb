@@ -23,5 +23,5 @@
 #  fk_rails_...  (job_application_id => job_applications.id)
 #
 class Contact < ApplicationRecord
-  belongs_to :user
+  belongs_to :job_application
 end
