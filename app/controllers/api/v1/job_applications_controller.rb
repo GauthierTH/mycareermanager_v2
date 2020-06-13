@@ -4,7 +4,7 @@ module Api
   module V1
     class JobApplicationsController < ApplicationController
       before_action :set_job_application, only: [:show, :update, :destroy]
-      before_action :check_user
+      before_action :check_user, except: [:index]
 
       def index
         @job_applications = current_user.job_applications

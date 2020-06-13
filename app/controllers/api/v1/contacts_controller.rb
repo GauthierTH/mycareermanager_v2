@@ -4,7 +4,7 @@ module Api
   module V1
     class ContactsController < ApplicationController
       before_action :set_contact, only: [:update, :destroy]
-      before_action :check_user
+      before_action :check_user, except: [:index]
 
       def index
         @contacts = current_user.contacts

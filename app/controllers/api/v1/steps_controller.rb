@@ -4,7 +4,7 @@ module Api
   module V1
     class StepsController < ApplicationController
       before_action :set_step, only: [:update, :destroy]
-      before_action :check_user
+      before_action :check_user, except: [:index]
 
       def index
         @steps = current_user.steps
