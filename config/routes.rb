@@ -17,9 +17,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'profile', to: 'profile#show'
 
+      resources :steps, only: [:update, :destroy]
+      resources :contacts, only: [:update, :destroy]
       resources :job_applications, except: [:edit, :new] do
-        resources :steps, except: [:show, :edit, :new]
-        resources :contacts, except: [:show, :edit, :new]
+        resources :steps, only: [:index, :create]
+        resources :contacts, only: [:index, :create]
       end
     end
   end
