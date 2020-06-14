@@ -20,7 +20,7 @@ module Api
         @job_application = JobApplication.new(job_application_params)
 
         if @job_application.save
-          render json: @job_application, status: :created, location: api_v1_job_applications_url(@job_application)
+          render json: @job_application, status: :created, location: api_v1_job_applications_path(@job_application)
         else
           render json: @job_application.errors, status: :unprocessable_entity
         end

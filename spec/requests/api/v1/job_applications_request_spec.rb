@@ -94,11 +94,11 @@ RSpec.describe "Api::V1::JobApplications", type: :request do
     before do
       @job_application = create(:job_application, user: @user)
       patch "/api/v1/job_applications/#{@job_application.id}",
-          params: {
-            job_application: {
-              company_name: 'Facebook'
+            params: {
+              job_application: {
+                company_name: 'Facebook'
+              }
             }
-          }
       @job_application.reload
     end
 
