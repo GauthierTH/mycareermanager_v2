@@ -4,7 +4,7 @@ module Api
   module V1
     class JobApplicationsController < ApplicationController
       before_action :set_job_application, only: [:show, :update, :destroy]
-      before_action :check_user, except: [:index]
+      before_action :check_user, except: [:index, :create]
 
       def index
         @job_applications = current_user.job_applications
@@ -49,7 +49,7 @@ module Api
       end
 
       def check_user
-        render json: { error: 'Unauthorized' } if current_user != @job_application.user
+        render json: { error: 'Unauthorized' }, status: :unauthorized if current_user != @job_application.user
       end
     end
   end
