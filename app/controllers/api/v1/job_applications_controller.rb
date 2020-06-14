@@ -4,7 +4,7 @@ module Api
   module V1
     class JobApplicationsController < ApplicationController
       before_action :set_job_application, only: [:show, :update, :destroy]
-      before_action :check_user
+      before_action :check_user, except: [:index, :create]
 
       def index
         @job_applications = current_user.job_applications
@@ -20,7 +20,7 @@ module Api
         @job_application = JobApplication.new(job_application_params)
 
         if @job_application.save
-          render json: @job_application, status: :created, location: api_v1_job_applications_url(@job_application)
+          render json: @job_application, status: :created, location: api_v1_job_applications_path(@job_application)
         else
           render json: @job_application.errors, status: :unprocessable_entity
         end
@@ -49,7 +49,7 @@ module Api
       end
 
       def check_user
-        render json: { error: 'Unauthorized' } if current_user != @job_application.user
+        render json: { error: 'Unauthorized' }, status: :unauthorized if current_user != @job_application.user
       end
     end
   end
