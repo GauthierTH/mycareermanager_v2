@@ -3,8 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
 import { logoutHelper } from '../tools/helper/logout'
-import dropdownIcon from '../images/dropdown-icon.svg'
-import rocketIcon from '../images/rocket-icon.svg'
 
 const Navbar = () => {
   const dispatch = useDispatch();
