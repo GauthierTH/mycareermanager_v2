@@ -1,6 +1,15 @@
 import React from 'react'
-  
-const HomePage = () => {
+import { useSelector } from 'react-redux';
+
+import LoginForm from '../components/LoginForm'
+
+const Home = () => {
+  const isAuthenticated = useSelector(state => state.user.isAuthenticated)
+
+  if(!isAuthenticated) {
+    return <div className='row justify-content-center'><LoginForm /></div>
+  }
+
   return(
     <div>
       HomePage
@@ -8,4 +17,4 @@ const HomePage = () => {
   )
 }
   
-export default HomePage
+export default Home
