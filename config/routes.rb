@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'profile', to: 'profile#show'
-
+      get 'next_steps', to: 'steps#next_steps'
       resources :steps, only: [:update, :destroy]
       resources :contacts, only: [:update, :destroy]
       resources :job_applications, except: [:edit, :new] do
