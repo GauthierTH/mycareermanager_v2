@@ -30,7 +30,7 @@ FactoryBot.define do
     job_offer_link { Faker::Internet.url }
     note { Faker::Lorem.sentences(number: 5) }
     position { Faker::Company.profession }
-    status { ['identified', 'applied', 'in_progress'].sample }
+    status { JobApplication.statuses.keys.sample }
     user { create(:user) }
   end
 end

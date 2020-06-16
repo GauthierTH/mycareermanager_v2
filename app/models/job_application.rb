@@ -27,4 +27,10 @@ class JobApplication < ApplicationRecord
   belongs_to :user
   has_many :steps
   has_many :contacts
+
+  enum status: {
+    identified: 'identified',
+    applied: 'applied',
+    in_progress: 'in_progress'
+  }.freeze
 end
