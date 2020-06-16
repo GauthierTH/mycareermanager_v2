@@ -30,7 +30,7 @@ RSpec.describe "Api::V1::Steps", type: :request do
       post "/api/v1/job_applications/#{@job_application.id}/steps",
            params: {
              step: {
-               category: 'interview',
+               category: :interview,
                date: @datetime,
                description: 'with Mokoko',
                is_done: false
@@ -53,11 +53,11 @@ RSpec.describe "Api::V1::Steps", type: :request do
 
   describe 'PUT /api/v1/steps/:id' do
     before do
-      @step = create(:step, job_application: @job_application, category: 'phone call')
+      @step = create(:step, job_application: @job_application, category: :phone_call)
       put "/api/v1/steps/#{@step.id}",
           params: {
             step: {
-              category: 'interview'
+              category: :interview
             }
           }
       @step.reload
@@ -74,11 +74,11 @@ RSpec.describe "Api::V1::Steps", type: :request do
 
   describe 'PATCH /api/v1/steps/:id' do
     before do
-      @step = create(:step, job_application: @job_application, category: 'phone call')
+      @step = create(:step, job_application: @job_application, category: :phone_call)
       patch "/api/v1/steps/#{@step.id}",
             params: {
               step: {
-                category: 'interview'
+                category: :interview
               }
             }
       @step.reload
