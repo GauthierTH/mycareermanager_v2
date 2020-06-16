@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -10,9 +11,9 @@
 require 'faker'
 
 user = User.create(
-  email: 'azerty789@gmail.com', 
-  password: 'azerty', 
-  username:'azerty789'
+  email: 'azerty789@gmail.com',
+  password: 'azerty',
+  username: 'azerty789'
 )
 
 3.times do
@@ -25,7 +26,7 @@ user = User.create(
     status: :identified,
     user: user
   )
-  
+
   applied_job_application = JobApplication.create(
     company_name: Faker::Company.name,
     job_description: Faker::Lorem.sentences(number: 5),
@@ -35,7 +36,7 @@ user = User.create(
     status: :applied,
     user: user
   )
-  
+
   Step.create(
     category: :application_sent,
     date: Faker::Date.between(from: 30.days.ago, to: DateTime.now),
@@ -43,7 +44,7 @@ user = User.create(
     is_done: true,
     job_application: applied_job_application
   )
-  
+
   in_progress_job_application = JobApplication.create(
     company_name: Faker::Company.name,
     job_description: Faker::Lorem.sentences(number: 5),
@@ -53,7 +54,7 @@ user = User.create(
     status: :in_progress,
     user: user
   )
-  
+
   Step.create(
     category: :application_sent,
     date: Faker::Date.between(from: 30.days.ago, to: 15.days.ago),
@@ -61,7 +62,7 @@ user = User.create(
     is_done: true,
     job_application: in_progress_job_application
   )
-  
+
   Step.create(
     category: Step.categories.keys.reject{ |category| category == 'application_sent' }.sample,
     date: Faker::Date.between(from: 15.days.ago, to: DateTime.now),
@@ -69,7 +70,7 @@ user = User.create(
     is_done: true,
     job_application: in_progress_job_application
   )
-  
+
   Step.create(
     category: Step.categories.keys.reject{ |category| category == 'application_sent' }.sample,
     date: Faker::Date.between(from: DateTime.now, to: DateTime.now + 30.days),
