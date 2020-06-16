@@ -107,4 +107,23 @@ RSpec.describe "Api::V1::Steps", type: :request do
       expect(@job_application.steps).not_to include(@step)
     end
   end
+
+  describe 'GET /api/v1/next_steps' do
+    before do
+      other_job_application = create(:job_application, user: @job_application.user)
+      create_list(:step, 2, job_application: @job_application, is_done: false)
+      create_list(:step, 3, job_application: @job_application, is_done: true)
+      create_list(:step, 4, job_application: other_job_application, is_done: false)
+      create_list(:step, 5, job_application: other_job_application, is_done: true)
+      get "/api/v1/next_steps"
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'returns (all) the steps of the current user that are not done' do
+      expect(JSON.parse(response.body).size).to eq(6)
+    end
+  end
 end

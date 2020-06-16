@@ -30,4 +30,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :email, uniqueness: true, case_sensitive: false
+
+  def next_steps
+    self.job_applications.map{ |job_application| job_application.steps.where(is_done: false) }.flatten
+  end
 end

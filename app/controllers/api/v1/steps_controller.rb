@@ -5,11 +5,10 @@ module Api
     class StepsController < ApplicationController
       before_action :set_step, only: [:update, :destroy]
       before_action :set_job_application, only: [:index, :create]
-      before_action :check_user, except: [:index]
+      before_action :check_user, except: [:next_steps]
 
       def index
         @steps = @job_application.steps
-
         render json: @steps
       end
 
@@ -33,6 +32,11 @@ module Api
 
       def destroy
         @step.destroy
+      end
+
+      def next_steps
+        @next_steps = current_user.next_steps
+        render json: @next_steps
       end
 
       private
