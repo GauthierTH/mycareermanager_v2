@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import Navbar from './components/Navbar/Navbar'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import AccountPage from './pages/AccountPage'
   
 const App = () => {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated)
@@ -36,9 +37,10 @@ const App = () => {
       <Switch>
         <UnauthRoute exact path="/login" component={LoginPage} />
         <UnauthRoute exact path="/register" component={RegisterPage} />
-        <Route path="/">
+        <Route exact path="/">
           <HomePage />
         </Route>
+        <AuthRoute exact path='/my-account' component={AccountPage} />
       </Switch>
     </Router>
   )

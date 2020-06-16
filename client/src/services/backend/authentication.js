@@ -34,8 +34,7 @@ export const login = (data) => {
     if (responseJson.status === "error") {
       dispatch(loginFailure(responseJson.message));
     } else if(response.headers.get('Authorization')) {
-      Cookies.set('token', response.headers.get('Authorization'))
-      Cookies.set('id', responseJson.id)
+      Cookies.set('bearer_token', response.headers.get('Authorization'))
       dispatch(loginSuccess());
     } else {
       dispatch(loginFailure('error'));
@@ -43,13 +42,13 @@ export const login = (data) => {
   }
 }
 
-export const deleteAccount = () => {
-  fetch(`${URL}/signup`, {
-    method: 'delete',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': `${Cookies.get('token')}`
-    }
-  });
-}
+// export const deleteAccount = () => {
+//   fetch(`${URL}/signup`, {
+//     method: 'delete',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json',
+//       'Authorization': `${Cookies.get('token')}`
+//     }
+//   });
+// }

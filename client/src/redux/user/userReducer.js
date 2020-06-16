@@ -3,8 +3,8 @@ import Cookies from 'js-cookie'
 import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_REQUEST, REGISTER_FAILURE } from './userActions'
 
 const initialState = {
-  isAuthenticated: Cookies.get('token') ? true : false,
-  token: Cookies.get('token'),
+  isAuthenticated: Cookies.get('bearer_token') ? true : false,
+  bearerToken: Cookies.get('bearer_token'),
   error: ''
 }
 
@@ -14,7 +14,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        token: Cookies.get('token')
+        bearerToken: Cookies.get('bearer_token')
       }
     case LOGIN_FAILURE:
       return {
@@ -25,8 +25,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        token: null,
-        id: null
+        bearerToken: null
       }
     case REGISTER_FAILURE:
       return {
