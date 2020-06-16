@@ -30,7 +30,7 @@ RSpec.describe "Api::V1::Steps", type: :request do
       post "/api/v1/job_applications/#{@job_application.id}/steps",
            params: {
              step: {
-               category: 'interview',
+               category: :interview,
                date: @datetime,
                description: 'with Mokoko',
                is_done: false
@@ -53,11 +53,11 @@ RSpec.describe "Api::V1::Steps", type: :request do
 
   describe 'PUT /api/v1/steps/:id' do
     before do
-      @step = create(:step, job_application: @job_application, category: 'phone call')
+      @step = create(:step, job_application: @job_application, category: :phone_call)
       put "/api/v1/steps/#{@step.id}",
           params: {
             step: {
-              category: 'interview'
+              category: :interview
             }
           }
       @step.reload
@@ -74,11 +74,11 @@ RSpec.describe "Api::V1::Steps", type: :request do
 
   describe 'PATCH /api/v1/steps/:id' do
     before do
-      @step = create(:step, job_application: @job_application, category: 'phone call')
+      @step = create(:step, job_application: @job_application, category: :phone_call)
       patch "/api/v1/steps/#{@step.id}",
             params: {
               step: {
-                category: 'interview'
+                category: :interview
               }
             }
       @step.reload
@@ -105,6 +105,25 @@ RSpec.describe "Api::V1::Steps", type: :request do
 
     it 'deletes job_application' do
       expect(@job_application.steps).not_to include(@step)
+    end
+  end
+
+  describe 'GET /api/v1/next_steps' do
+    before do
+      other_job_application = create(:job_application, user: @job_application.user)
+      create_list(:step, 2, job_application: @job_application, is_done: false)
+      create_list(:step, 3, job_application: @job_application, is_done: true)
+      create_list(:step, 4, job_application: other_job_application, is_done: false)
+      create_list(:step, 5, job_application: other_job_application, is_done: true)
+      get "/api/v1/next_steps"
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'returns (all) the steps of the current user that are not done' do
+      expect(JSON.parse(response.body).size).to eq(6)
     end
   end
 end

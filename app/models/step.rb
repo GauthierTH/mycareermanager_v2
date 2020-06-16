@@ -23,4 +23,12 @@
 #
 class Step < ApplicationRecord
   belongs_to :job_application
+
+  enum category: {
+    interview: 'interview',
+    phone_call: 'phone_call',
+    technical_test: 'technical_test',
+    follow_up: 'follow_up',
+    application_sent: 'application_sent'
+  }.freeze
 end
