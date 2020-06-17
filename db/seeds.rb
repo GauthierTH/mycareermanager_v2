@@ -24,6 +24,7 @@ user = User.create(
     note: Faker::Lorem.sentences(number: 5),
     position: Faker::Company.profession,
     status: :identified,
+    priority: JobApplication.priorities.keys.sample
     user: user
   )
 
@@ -34,6 +35,7 @@ user = User.create(
     note: Faker::Lorem.sentences(number: 5),
     position: Faker::Company.profession,
     status: :applied,
+    priority: JobApplication.priorities.keys.sample
     user: user
   )
 
@@ -52,6 +54,7 @@ user = User.create(
     note: Faker::Lorem.sentences(number: 5),
     position: Faker::Company.profession,
     status: :in_progress,
+    priority: JobApplication.priorities.keys.sample
     user: user
   )
 
