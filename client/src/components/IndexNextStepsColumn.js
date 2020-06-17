@@ -10,7 +10,6 @@ const IndexNextStepsColumn = () => {
 
   const getNextSteps = async () => {
     let nextSteps = await getNextStepsRequest(bearerToken)
-    console.log(nextSteps)
     setNextSteps(nextSteps)
   }
 
