@@ -65,7 +65,6 @@ RSpec.describe "Api::V1::JobApplications", type: :request do
       expect(JSON.parse(response.body)['job_offer_link']).to eq('https://www.facebook.com')
       expect(JSON.parse(response.body)['job_description']).to eq('easy')
       expect(JSON.parse(response.body)['note']).to eq('minimum wage')
-      expect(JSON.parse(response.body)['user_id']).to eq(@user.id)
     end
   end
 

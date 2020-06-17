@@ -48,7 +48,6 @@ RSpec.describe "Api::V1::Contacts", type: :request do
       expect(JSON.parse(response.body)['last_name']).to eq('gaga')
       expect(JSON.parse(response.body)['phone_number']).to eq('0123456789')
       expect(JSON.parse(response.body)['position']).to eq('seated')
-      expect(JSON.parse(response.body)['job_application_id']).to eq(@job_application.id)
     end
   end
 
