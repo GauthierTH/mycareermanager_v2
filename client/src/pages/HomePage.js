@@ -4,6 +4,7 @@ import moment from 'moment'
 
 import LoginForm from '../components/LoginForm'
 import IndexNextStepsColumn from '../components/IndexNextStepsColumn'
+import JobApplicationSection from '../components/JobApplicationSection'
 
 const Home = () => {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated)
@@ -19,6 +20,7 @@ const Home = () => {
       </h1>
       <div className='row justify-content-center'>
         <IndexNextStepsColumn />
+        <JobApplicationSection />
       </div>
     </div>
   )
