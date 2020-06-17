@@ -10,6 +10,7 @@
 #  job_offer_link  :string
 #  note            :text
 #  position        :string
+#  priority        :integer          default("low"), not null
 #  status          :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -32,5 +33,11 @@ class JobApplication < ApplicationRecord
     identified: 'identified',
     applied: 'applied',
     in_progress: 'in_progress'
+  }.freeze
+
+  enum priority: {
+    low: 0,
+    medium: 1,
+    high: 2
   }.freeze
 end

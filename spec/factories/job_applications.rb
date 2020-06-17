@@ -10,6 +10,7 @@
 #  job_offer_link  :string
 #  note            :text
 #  position        :string
+#  priority        :integer          default("low"), not null
 #  status          :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -30,6 +31,7 @@ FactoryBot.define do
     job_offer_link { Faker::Internet.url }
     note { Faker::Lorem.sentences(number: 5) }
     position { Faker::Company.profession }
+    priority { JobApplication.priorities.keys.sample }
     status { JobApplication.statuses.keys.sample }
     user { create(:user) }
   end
