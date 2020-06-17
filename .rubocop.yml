@@ -54,3 +54,6 @@ RSpec/EmptyExampleGroup:
 # Prevent proper overriding
 RSpec/LetSetup:
   Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false

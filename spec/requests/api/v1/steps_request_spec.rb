@@ -47,7 +47,6 @@ RSpec.describe "Api::V1::Steps", type: :request do
       expect(DateTime.parse(JSON.parse(response.body)['date']).to_i).to eq(@datetime.to_i)
       expect(JSON.parse(response.body)['description']).to eq('with Mokoko')
       expect(JSON.parse(response.body)['is_done']).to eq(false)
-      expect(JSON.parse(response.body)['job_application_id']).to eq(@job_application.id)
     end
   end
 

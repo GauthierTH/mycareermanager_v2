@@ -27,11 +27,8 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
 
   has_many :job_applications
+  has_many :steps, through: :job_applications
 
   validates :username, presence: true
   validates :email, uniqueness: true, case_sensitive: false
-
-  def next_steps
-    job_applications.map{ |job_application| job_application.steps.where(is_done: false) }.flatten
-  end
 end
