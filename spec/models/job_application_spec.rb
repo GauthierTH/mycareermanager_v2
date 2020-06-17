@@ -10,6 +10,7 @@
 #  job_offer_link  :string
 #  note            :text
 #  position        :string
+#  priority        :integer          default("low"), not null
 #  status          :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

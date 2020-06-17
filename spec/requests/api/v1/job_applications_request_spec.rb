@@ -46,6 +46,7 @@ RSpec.describe "Api::V1::JobApplications", type: :request do
              job_application: {
                company_name: 'Facebook',
                position: 'CEO',
+               priority: :low,
                status: :in_progress,
                job_offer_link: 'https://www.facebook.com',
                job_description: 'easy',
@@ -61,6 +62,7 @@ RSpec.describe "Api::V1::JobApplications", type: :request do
     it 'returns job_application with correct attributes' do
       expect(JSON.parse(response.body)['company_name']).to eq('Facebook')
       expect(JSON.parse(response.body)['position']).to eq('CEO')
+      expect(JSON.parse(response.body)['priority']).to eq('low')
       expect(JSON.parse(response.body)['status']).to eq('in_progress')
       expect(JSON.parse(response.body)['job_offer_link']).to eq('https://www.facebook.com')
       expect(JSON.parse(response.body)['job_description']).to eq('easy')
