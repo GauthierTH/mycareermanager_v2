@@ -35,7 +35,7 @@ module Api
       end
 
       def next_steps
-        @next_steps = current_user.next_steps
+        @next_steps = current_user.steps.next_steps
         render json: @next_steps
       end
 

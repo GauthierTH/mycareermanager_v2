@@ -31,4 +31,6 @@ class Step < ApplicationRecord
     follow_up: 'follow_up',
     application_sent: 'application_sent'
   }.freeze
+
+  scope :next_steps, -> { where(is_done: false).order(:date) }
 end
