@@ -7,7 +7,7 @@ module Api
       before_action :check_user, except: [:index, :create]
 
       def index
-        @job_applications = current_user.job_applications
+        @job_applications = current_user.job_applications.order(priority: :desc)
 
         render json: @job_applications
       end
@@ -45,7 +45,7 @@ module Api
       end
 
       def job_application_params
-        params.require(:job_application).permit(:company_name, :position, :status, :job_offer_link, :job_description, :note).merge(user: current_user)
+        params.require(:job_application).permit(:company_name, :position, :status, :job_offer_link, :job_description, :note, :priority).merge(user: current_user)
       end
 
       def check_user
