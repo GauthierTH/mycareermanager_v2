@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import AccountPage from './pages/AccountPage'
-import JobApplicationPage from './pages/JobApplicationPage'
+import JobApplicationShowPage from './pages/JobApplicationShowPage'
   
 const App = () => {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated)
@@ -42,7 +42,7 @@ const App = () => {
           <HomePage />
         </Route>
         <AuthRoute exact path='/my-account' component={AccountPage} />
-        <AuthRoute exact path='/job-application/:id' component={JobApplicationPage} />
+        <AuthRoute exact path='/job-application/:id' component={JobApplicationShowPage} />
       </Switch>
     </Router>
   )
