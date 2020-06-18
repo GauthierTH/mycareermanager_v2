@@ -12,6 +12,7 @@ const JobApplicationColumn = ({title, jobApplications}) => {
         {jobApplications.map(jobApplication => 
           <JobApplicationCard
             key={jobApplication.id}
+            id={jobApplication.id}
             company_name={jobApplication.company_name}
             position={jobApplication.position}
             priority={jobApplication.priority}
