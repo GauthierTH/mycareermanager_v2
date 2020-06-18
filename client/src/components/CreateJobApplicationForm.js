@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 import { createJobApplicationRequest } from '../services/backend/jobApplication'
   
 const CreateJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
+  let history = useHistory();
   const [companyName, setCompanyName] = useState('')
   const [position, setPosition] = useState('')
   const [priority, setPriority] = useState('low')
@@ -21,7 +23,7 @@ const CreateJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, set
     let jobApplication = await createJobApplicationRequest(bearerToken, data)
     setJobApplications([...jobApplications, jobApplication])
     
-    setcreateJobApplicationFormIsOpen(false)
+    history.push(`/job-application/${jobApplication.id}`)
   }
 
   return(
