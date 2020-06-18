@@ -1,8 +1,22 @@
 @import '~bootstrap/scss/bootstrap.scss';
-
 @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+@import './icon.scss';
 
 body {
   font-family: "Manrope", sans-serif;
   margin: 0;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-application-column {
+  width: 33%;
+}
+
+.next-step-column{
+  width: 25%;
 }

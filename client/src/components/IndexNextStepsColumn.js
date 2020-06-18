@@ -10,7 +10,6 @@ const IndexNextStepsColumn = () => {
 
   const getNextSteps = async () => {
     let nextSteps = await getNextStepsRequest(bearerToken)
-    console.log(nextSteps)
     setNextSteps(nextSteps)
   }
 
@@ -19,11 +18,11 @@ const IndexNextStepsColumn = () => {
   }, [])
 
   return(
-    <div>
-      <div className='card-header'>
+    <div className='next-step-column'>
+      <div className='column-header'>
         <h2>Next Steps</h2>
       </div>
-      <div className='card-body'>
+      <div className='column-body'>
         {nextSteps.map(step => 
           <IndexNextStepCard
             key={step.id}
@@ -31,6 +30,7 @@ const IndexNextStepsColumn = () => {
             date={step.date}
             company_name={step.job_application.company_name}
             position={step.job_application.position}
+            jobApplicationId={step.job_application.id}
           />
         )}
       </div>

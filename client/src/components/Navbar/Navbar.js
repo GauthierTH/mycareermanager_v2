@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
-import { logoutHelper } from '../../tools/helper/logout'
+import { logoutHelper } from '../../helpers/logout'
 import './Navbar.scss'
-import rocketIcon from '../../images/rocket-icon.svg'
-import dropdownIcon from '../../images/dropdown-icon.svg'
+import rocketIcon from '../../assets/images/rocket-icon.svg'
+import dropdownIcon from '../../assets/images/dropdown-icon.svg'
 import { getUsernameRequest } from '../../services/backend/user'
 
 const Navbar = () => {
@@ -26,14 +26,14 @@ const Navbar = () => {
   return(
     <nav className='navbar'>
       <Link to="/">
-        <img src={rocketIcon} className="rocket-icon" />
+        <img src={rocketIcon} className="rocket-icon" alt='rocket-icon' />
         My Career Manager
       </Link>
 
       <div className="dropdown">
         <div className='dropdown-button'>
           Connected as {username}
-          <img className="dropdown-arrow" src={dropdownIcon} />
+          <img className="dropdown-arrow" src={dropdownIcon} alt='dropdown-arrow' />
         </div>
         <div className="dropdown-content">
           <ul>
