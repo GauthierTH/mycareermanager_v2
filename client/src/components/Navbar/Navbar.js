@@ -26,14 +26,14 @@ const Navbar = () => {
   return(
     <nav className='navbar'>
       <Link to="/">
-        <img src={rocketIcon} className="rocket-icon" />
+        <img src={rocketIcon} className="rocket-icon" alt='rocket-icon' />
         My Career Manager
       </Link>
 
       <div className="dropdown">
         <div className='dropdown-button'>
           Connected as {username}
-          <img className="dropdown-arrow" src={dropdownIcon} />
+          <img className="dropdown-arrow" src={dropdownIcon} alt='dropdown-arrow' />
         </div>
         <div className="dropdown-content">
           <ul>
