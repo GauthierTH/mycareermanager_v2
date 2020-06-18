@@ -4,7 +4,6 @@ import { logout } from '../redux'
 
 export const logoutHelper = (dispatch, history) => {
   dispatch(logout())
-  Cookies.remove('token')
-  Cookies.remove('id')
+  Cookies.remove('bearer_token')
   history.push('/')
 }
