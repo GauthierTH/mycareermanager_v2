@@ -1,7 +1,7 @@
 import React from 'react'
 
-import starRegular from '../../images/star-regular.svg'
-import starSolid from '../../images/star-solid.svg'
+import starRegular from '../assets/images/star-regular.svg'
+import starSolid from '../assets/images/star-solid.svg'
 
 export const priorityHelper = {
   low: 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { priorityHelper } from '../tools/helper/priority'
+import { priorityHelper } from '../helpers/priority'
   
 const JobApplicationCard = ({company_name, position, priority}) => {
   return(
