@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 
-import { getJobApplicationRequest } from '../services/backend/jobApplication'
+import { getJobApplicationsRequest } from '../services/backend/jobApplication'
 import JobApplicationColumn from './JobApplicationColumn'
   
 const JobApplicationSection = () => {
@@ -9,7 +9,7 @@ const JobApplicationSection = () => {
   const [jobApplications, setJobApplications] = useState([])
 
   const getJobApplications = async () => {
-    let jobApplications = await getJobApplicationRequest(bearerToken)
+    let jobApplications = await getJobApplicationsRequest(bearerToken)
     setJobApplications(jobApplications)
   }
 
@@ -18,10 +18,28 @@ const JobApplicationSection = () => {
   }, [])
 
   return(
-    <div className='row justify-content-center'>
-      <JobApplicationColumn title='IDENTIFIED' jobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'identified')} />
-      <JobApplicationColumn title='APPLIED' jobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'applied')} />
-      <JobApplicationColumn title='IN PROGRESS' jobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'in_progress')} />
+    <div className='row justify-content-center col-9'>
+      <JobApplicationColumn 
+        status='identified' 
+        title='IDENTIFIED' 
+        setJobApplications={setJobApplications}
+        jobApplications={jobApplications}
+        columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'identified')} 
+      />
+      <JobApplicationColumn 
+        status='applied' 
+        title='APPLIED' 
+        setJobApplications={setJobApplications}
+        jobApplications={jobApplications}
+        columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'applied')} 
+      />
+      <JobApplicationColumn 
+        status='in_progress' 
+        title='IN PROGRESS' 
+        setJobApplications={setJobApplications}
+        jobApplications={jobApplications}
+        columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'in_progress')} 
+      />
     </div>
   )
 }

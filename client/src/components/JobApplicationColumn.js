@@ -1,15 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import JobApplicationCard from './JobApplicationCard'
+import plusSolid from '../assets/images/plus-solid.svg'
+import CreateJobApplicationForm from './CreateJobApplicationForm'
   
-const JobApplicationColumn = ({title, jobApplications}) => {
+const JobApplicationColumn = ({title, columnJobApplications, setJobApplications, status, jobApplications}) => {
+  const [createJobApplicationFormIsOpen, setcreateJobApplicationFormIsOpen] = useState(false)
+
   return(
-    <div>
-      <div className='card-header'>
-        <h2>{title} ({jobApplications.length})</h2>
+    <div className='job-application-column'>
+      <div className='column-header'>
+        <h2>{title} ({columnJobApplications.length})</h2>
+        <img src={plusSolid} className='plus-solid' onClick={() => setcreateJobApplicationFormIsOpen(true)} />
       </div>
-      <div className='card-body'>
-        {jobApplications.map(jobApplication => 
+
+      <div className='column-body'>
+        {createJobApplicationFormIsOpen && 
+          <CreateJobApplicationForm 
+            setcreateJobApplicationFormIsOpen={setcreateJobApplicationFormIsOpen}
+            title={title}
+            setJobApplications={setJobApplications}
+            status={status}
+            jobApplications={jobApplications}
+          />
+        }
+
+        {columnJobApplications.map(jobApplication => 
           <JobApplicationCard
             key={jobApplication.id}
             id={jobApplication.id}
