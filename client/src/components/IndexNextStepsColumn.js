@@ -30,6 +30,7 @@ const IndexNextStepsColumn = () => {
             date={step.date}
             company_name={step.job_application.company_name}
             position={step.job_application.position}
+            jobApplicationId={step.job_application.id}
           />
         )}
       </div>
