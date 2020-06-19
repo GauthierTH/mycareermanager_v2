@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
-import { createJobApplicationRequest } from '../services/backend/jobApplication'
+import { createJobApplicationRequest } from 'services/backend/jobApplication'
   
 const CreateJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)

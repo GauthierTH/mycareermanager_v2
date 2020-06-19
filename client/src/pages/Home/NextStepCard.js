@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from "react-router-dom";
   
-const IndexNextStepCard = ({category, date, company_name, position, jobApplicationId}) => {
+const NextStepCard = ({category, date, company_name, position, jobApplicationId}) => {
   return(
     <div>
       <div>{category}</div>
@@ -13,4 +13,4 @@ const IndexNextStepCard = ({category, date, company_name, position, jobApplicati
   )
 }
   
-export default IndexNextStepCard
+export default NextStepCard

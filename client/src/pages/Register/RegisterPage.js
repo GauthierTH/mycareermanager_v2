@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from "react-router-dom";
 
-import { register } from '../services/backend/authentication'
-import store from '../redux/store';
+import { register } from 'services/backend/authentication'
+import store from 'redux/store';
   
 const RegisterPage = () => {
   let history = useHistory();
