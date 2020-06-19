@@ -2,12 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
-import HomePage from './pages/Home/HomePage'
-import Navbar from './components/Navbar/Navbar'
-import LoginPage from './pages/Login/LoginPage'
-import RegisterPage from './pages/Register/RegisterPage'
-import AccountPage from './pages/Account/AccountPage'
-import JobApplicationShowPage from './pages/JobApplicationShow/JobApplicationShowPage'
+import HomePage from './pages/home/HomePage'
+import Navbar from './components/navbar/Navbar'
+import LoginPage from './pages/login/LoginPage'
+import RegisterPage from './pages/register/RegisterPage'
+import AccountPage from './pages/account/AccountPage'
+import JobApplicationShowPage from './pages/jobApplicationShow/JobApplicationShowPage'
   
 const App = () => {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated)
