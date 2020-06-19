@@ -34,3 +34,13 @@ export const updateStepRequest = async (bearerToken, data, id) => {
   });
   return response.json()
 }
+
+export const deleteStepRequest = async (bearerToken, id) => {
+  fetch(`${API_URL}/steps/${id}`, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearerToken
+    }
+  })
+}

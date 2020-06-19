@@ -3,6 +3,7 @@ import moment from 'moment'
 
 import EditStepForm from './EditStepForm'
 import IsDoneCheckbox from './IsDoneCheckbox'
+import DeleteStepButton from './DeleteStepButton'
   
 const StepCard = ({id, category, date, description, is_done, steps, setSteps}) => {
   const [updateStepFormIsOpen, setUpdateStepFormIsOpen] = useState(false)
@@ -33,6 +34,11 @@ const StepCard = ({id, category, date, description, is_done, steps, setSteps}) =
         steps={steps}
       />
       <button onClick={() => setUpdateStepFormIsOpen(true)}>edit</button>
+      <DeleteStepButton
+        id={id}
+        setSteps={setSteps}
+        steps={steps}
+      />
     </div>
   )
 }
