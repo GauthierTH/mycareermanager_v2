@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { createJobApplicationRequest } from 'services/backend/jobApplication'
   
-const CreateJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
+const NewJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   let history = useHistory();
   const [companyName, setCompanyName] = useState('')
@@ -55,4 +55,4 @@ const CreateJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, set
   )
 }
   
-export default CreateJobApplicationForm
+export default NewJobApplicationForm
