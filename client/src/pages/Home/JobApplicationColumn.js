@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import JobApplicationCard from './JobApplicationCard'
 import plusSolid from 'assets/images/plus-solid.svg'
-import CreateJobApplicationForm from './CreateJobApplicationForm'
+import NewJobApplicationForm from './NewJobApplicationForm'
   
 const JobApplicationColumn = ({title, columnJobApplications, setJobApplications, status, jobApplications}) => {
   const [createJobApplicationFormIsOpen, setcreateJobApplicationFormIsOpen] = useState(false)
@@ -16,7 +16,7 @@ const JobApplicationColumn = ({title, columnJobApplications, setJobApplications,
 
       <div className='column-body'>
         {createJobApplicationFormIsOpen && 
-          <CreateJobApplicationForm 
+          <NewJobApplicationForm 
             setcreateJobApplicationFormIsOpen={setcreateJobApplicationFormIsOpen}
             title={title}
             setJobApplications={setJobApplications}

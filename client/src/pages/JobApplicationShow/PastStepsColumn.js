@@ -2,7 +2,7 @@ import React from 'react'
 
 import StepCard from './StepCard'
   
-const PastStepsColumn = ({pastSteps}) => {
+const PastStepsColumn = ({pastSteps, steps, setSteps}) => {
   return(
     <div>
       <div className='column-header'>
@@ -17,6 +17,8 @@ const PastStepsColumn = ({pastSteps}) => {
             date={step.date}
             description={step.description}
             is_done={step.is_done}
+            steps={steps}
+            setSteps={setSteps}
           />
         )}
       </div>

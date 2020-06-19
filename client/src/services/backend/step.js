@@ -22,3 +22,25 @@ export const createStepRequest = async (bearerToken, data, jobAppliationId) => {
   });
   return response.json()
 }
+
+export const updateStepRequest = async (bearerToken, data, id) => {
+  let response = await fetch(`${API_URL}/steps/${id}`, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearerToken
+    },
+    body: JSON.stringify({ step: data })
+  });
+  return response.json()
+}
+
+export const deleteStepRequest = async (bearerToken, id) => {
+  fetch(`${API_URL}/steps/${id}`, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearerToken
+    }
+  })
+}
