@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { login } from '../services/backend/authentication'
-import store from '../redux/store';
+import { login } from 'services/backend/authentication'
+import store from 'redux/store';
   
 const LoginForm = () => {
   let history = useHistory();

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 
-import { getNextStepsRequest } from '../services/backend/step'
-import IndexNextStepCard from './IndexNextStepCard'
+import { getNextStepsRequest } from 'services/backend/step'
+import NextStepCard from './NextStepCard'
   
-const IndexNextStepsColumn = () => {
+const NextStepsColumn = () => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   const [nextSteps, setNextSteps] = useState([])
 
@@ -24,7 +24,7 @@ const IndexNextStepsColumn = () => {
       </div>
       <div className='column-body'>
         {nextSteps.map(step => 
-          <IndexNextStepCard
+          <NextStepCard
             key={step.id}
             category={step.category}
             date={step.date}
@@ -38,4 +38,4 @@ const IndexNextStepsColumn = () => {
   )
 }
   
-export default IndexNextStepsColumn
+export default NextStepsColumn

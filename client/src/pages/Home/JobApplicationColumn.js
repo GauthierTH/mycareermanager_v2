@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import JobApplicationCard from './JobApplicationCard'
-import plusSolid from '../assets/images/plus-solid.svg'
+import plusSolid from 'assets/images/plus-solid.svg'
 import CreateJobApplicationForm from './CreateJobApplicationForm'
   
 const JobApplicationColumn = ({title, columnJobApplications, setJobApplications, status, jobApplications}) => {

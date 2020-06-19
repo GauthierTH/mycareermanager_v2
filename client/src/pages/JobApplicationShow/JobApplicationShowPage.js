@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
-import { getJobApplicationRequest } from '../services/backend/jobApplication'
-import StepsSection from '../components/StepsSection'
+import { getJobApplicationRequest } from 'services/backend/jobApplication'
+import StepsSection from './StepsSection'
   
 const JobApplicationShowPage = () => {
   let { id } = useParams();

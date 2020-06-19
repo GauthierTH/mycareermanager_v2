@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import ShowStepCard from './ShowStepCard'
-import plusSolid from '../assets/images/plus-solid.svg'
+import StepCard from './StepCard'
+import plusSolid from 'assets/images/plus-solid.svg'
 import CreateStepForm from './CreateStepForm'
   
-const ShowNextStepsColumn = ({nextSteps, setSteps, steps}) => {
+const NextStepsColumn = ({nextSteps, setSteps, steps}) => {
   const [createStepFormIsOpen, setcreateStepFormIsOpen] = useState(false)
 
   return(
@@ -23,7 +23,7 @@ const ShowNextStepsColumn = ({nextSteps, setSteps, steps}) => {
         }
 
         {nextSteps.map(step => 
-          <ShowStepCard
+          <StepCard
             key={step.id}
             id={step.id}
             category={step.category}
@@ -37,4 +37,4 @@ const ShowNextStepsColumn = ({nextSteps, setSteps, steps}) => {
   )
 }
   
-export default ShowNextStepsColumn
+export default NextStepsColumn
