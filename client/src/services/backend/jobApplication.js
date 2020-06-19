@@ -22,3 +22,14 @@ export const createJobApplicationRequest = async (bearerToken, data) => {
   });
   return response.json()
 }
+
+export const getJobApplicationRequest = async (bearerToken, id) => {
+  let response = await fetch(`${API_URL}/job_applications/${id}`, {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearerToken
+    }
+  });
+  return response.json()
+}
