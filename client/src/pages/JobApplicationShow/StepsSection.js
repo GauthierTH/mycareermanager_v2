@@ -13,7 +13,11 @@ const StepsSection = ({jobApplicationSteps}) => {
         steps={steps}
         setSteps={setSteps}
       />
-      <PastStepsColumn pastSteps={steps.filter(step => step.is_done)} />
+      <PastStepsColumn 
+        pastSteps={steps.filter(step => step.is_done)}
+        steps={steps}
+        setSteps={setSteps}
+      />
     </div>
   )
 }

@@ -30,6 +30,8 @@ const NextStepsColumn = ({nextSteps, setSteps, steps}) => {
             date={step.date}
             description={step.description}
             is_done={step.is_done}
+            setSteps={setSteps}
+            steps={steps}
           />
         )}
       </div>
