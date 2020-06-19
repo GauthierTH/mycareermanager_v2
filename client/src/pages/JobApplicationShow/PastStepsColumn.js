@@ -1,8 +1,8 @@
 import React from 'react'
 
-import ShowStepCard from './ShowStepCard'
+import StepCard from './StepCard'
   
-const ShowPastStepsColumn = ({pastSteps}) => {
+const PastStepsColumn = ({pastSteps}) => {
   return(
     <div>
       <div className='column-header'>
@@ -10,7 +10,7 @@ const ShowPastStepsColumn = ({pastSteps}) => {
       </div>
       <div className='column-body'>
         {pastSteps.map(step => 
-          <ShowStepCard
+          <StepCard
             key={step.id}
             id={step.id}
             category={step.category}
@@ -24,4 +24,4 @@ const ShowPastStepsColumn = ({pastSteps}) => {
   )
 }
   
-export default ShowPastStepsColumn
+export default PastStepsColumn

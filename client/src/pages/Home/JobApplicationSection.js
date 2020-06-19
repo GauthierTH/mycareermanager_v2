@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 
-import { getJobApplicationsRequest } from '../services/backend/jobApplication'
+import { getJobApplicationsRequest } from 'services/backend/jobApplication'
 import JobApplicationColumn from './JobApplicationColumn'
   
 const JobApplicationSection = () => {

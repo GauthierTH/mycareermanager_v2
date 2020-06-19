@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
   
-const ShowStepCard = ({id, category, date, description, is_done}) => {
+const StepCard = ({id, category, date, description, is_done}) => {
   return(
     <div className='card'>
       <div>{category}</div>
@@ -12,4 +12,4 @@ const ShowStepCard = ({id, category, date, description, is_done}) => {
   )
 }
   
-export default ShowStepCard
+export default StepCard

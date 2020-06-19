@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 
-import { createStepRequest } from '../services/backend/step'
+import { createStepRequest } from 'services/backend/step'
   
 const CreateStepForm = ({setcreateStepFormIsOpen, setSteps, steps}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)

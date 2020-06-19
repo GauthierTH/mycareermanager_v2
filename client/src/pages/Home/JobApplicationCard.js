@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-import { priorityHelper } from '../helpers/priority'
+import { priorityHelper } from 'helpers/priority'
   
 const JobApplicationCard = ({company_name, position, priority, id}) => {
   return(
