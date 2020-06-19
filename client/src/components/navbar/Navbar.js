@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import { logoutHelper } from 'helpers/logout'
-import './Navbar.scss'
+import './navbar.scss'
 import rocketIcon from 'assets/images/rocket-icon.svg'
 import dropdownIcon from 'assets/images/dropdown-icon.svg'
 import { getUsernameRequest } from 'services/backend/user'
