@@ -40,7 +40,7 @@ const CreateStepForm = ({setcreateStepFormIsOpen, setSteps, steps}) => {
       </div>
       <div className="form-group">
         <label>Date:</label>
-        <input type="date" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
+        <input type="datetime-local" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} required />
       </div>
       <div className="form-group">
         <label>Description:</label>
