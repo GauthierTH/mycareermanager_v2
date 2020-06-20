@@ -25,7 +25,7 @@ FactoryBot.define do
   factory :step do
     category { Step.categories.keys.sample }
     date { DateTime.now }
-    description { Faker::Lorem.sentences(number: 2) }
+    description { Faker::Lorem.sentence(word_count: 50) }
     is_done { false }
     job_application { create(:job_application) }
   end
