@@ -24,7 +24,7 @@ user = User.create(
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :identified,
-    priority: JobApplication.priorities.keys.sample
+    priority: JobApplication.priorities.keys.sample,
     user: user
   )
 
@@ -35,7 +35,7 @@ user = User.create(
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :applied,
-    priority: JobApplication.priorities.keys.sample
+    priority: JobApplication.priorities.keys.sample,
     user: user
   )
 
@@ -54,7 +54,7 @@ user = User.create(
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :in_progress,
-    priority: JobApplication.priorities.keys.sample
+    priority: JobApplication.priorities.keys.sample,
     user: user
   )
 
