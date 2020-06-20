@@ -33,3 +33,15 @@ export const getJobApplicationRequest = async (bearerToken, id) => {
   });
   return response.json()
 }
+
+export const updateJobApplicationRequest = async (bearerToken, data, id) => {
+  let response = await fetch(`${API_URL}/job_applications/${id}`, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearerToken
+    },
+    body: JSON.stringify({ job_application: data })
+  });
+  return response.json()
+}

@@ -7,7 +7,7 @@ const StepsSection = ({jobApplicationSteps}) => {
   const [steps, setSteps] = useState(jobApplicationSteps)
 
   return(
-    <div>
+    <div className='col-3'>
       <NextStepsColumn 
         nextSteps={steps.filter(step => !step.is_done)}
         steps={steps}
