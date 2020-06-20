@@ -8,22 +8,6 @@ RSpec.describe "Api::V1::Steps", type: :request do
     sign_in(@job_application.user)
   end
 
-  describe 'GET /api/v1/job_applications/:job_application_id/steps' do
-    before do
-      create_list(:step, 5, job_application: @job_application)
-      create_list(:step, 10)
-      get "/api/v1/job_applications/#{@job_application.id}/steps"
-    end
-
-    it 'returns status code 200' do
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'returns only the steps of the job_application' do
-      expect(JSON.parse(response.body).size).to eq(5)
-    end
-  end
-
   describe 'POST /api/v1/job_applications/:job_application_id/steps' do
     before do
       @datetime = DateTime.now

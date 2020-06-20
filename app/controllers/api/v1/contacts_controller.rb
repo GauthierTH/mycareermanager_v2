@@ -4,14 +4,8 @@ module Api
   module V1
     class ContactsController < ApplicationController
       before_action :set_contact, only: [:update, :destroy]
-      before_action :set_job_application, only: [:index, :create]
+      before_action :set_job_application, only: [:create]
       before_action :check_user
-
-      def index
-        @contacts = @job_application.contacts
-
-        render json: @contacts
-      end
 
       def create
         @contact = Contact.new(contact_params.merge(job_application: @job_application))
