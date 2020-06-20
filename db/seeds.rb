@@ -19,9 +19,9 @@ user = User.create(
 3.times do
   identified_job_application = JobApplication.create(
     company_name: Faker::Company.name,
-    job_description: Faker::Lorem.sentences(number: 5),
+    job_description: Faker::Lorem.sentence(word_count: 50),
     job_offer_link: Faker::Internet.url,
-    note: Faker::Lorem.sentences(number: 5),
+    note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :identified,
     priority: JobApplication.priorities.keys.sample
@@ -30,9 +30,9 @@ user = User.create(
 
   applied_job_application = JobApplication.create(
     company_name: Faker::Company.name,
-    job_description: Faker::Lorem.sentences(number: 5),
+    job_description: Faker::Lorem.sentence(word_count: 50),
     job_offer_link: Faker::Internet.url,
-    note: Faker::Lorem.sentences(number: 5),
+    note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :applied,
     priority: JobApplication.priorities.keys.sample
@@ -49,9 +49,9 @@ user = User.create(
 
   in_progress_job_application = JobApplication.create(
     company_name: Faker::Company.name,
-    job_description: Faker::Lorem.sentences(number: 5),
+    job_description: Faker::Lorem.sentence(word_count: 50),
     job_offer_link: Faker::Internet.url,
-    note: Faker::Lorem.sentences(number: 5),
+    note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :in_progress,
     priority: JobApplication.priorities.keys.sample
