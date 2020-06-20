@@ -20,8 +20,8 @@ Rails.application.routes.draw do
       resources :steps, only: [:update, :destroy]
       resources :contacts, only: [:update, :destroy]
       resources :job_applications, except: [:edit, :new] do
-        resources :steps, only: [:index, :create]
-        resources :contacts, only: [:index, :create]
+        resources :steps, only: [:create]
+        resources :contacts, only: [:create]
       end
     end
   end

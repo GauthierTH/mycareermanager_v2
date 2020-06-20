@@ -4,13 +4,8 @@ module Api
   module V1
     class StepsController < ApplicationController
       before_action :set_step, only: [:update, :destroy]
-      before_action :set_job_application, only: [:index, :create]
+      before_action :set_job_application, only: [:create]
       before_action :check_user, except: [:next_steps]
-
-      def index
-        @steps = @job_application.steps
-        render json: @steps
-      end
 
       def create
         @step = Step.new(step_params.merge(job_application: @job_application))
