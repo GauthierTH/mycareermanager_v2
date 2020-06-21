@@ -3,9 +3,9 @@ import SimpleFormat from '@16g/react-simple-format';
 
 import EditNoteForm from './EditNoteForm'
   
-const NoteColumn = ({note}) => {
+const NoteColumn = ({jobApplicationNote}) => {
   const [editNoteFormIsOpen, setEditNoteFormIsOpen] = useState(false)
-  const [Note, setNote] = useState(note)
+  const [note, setNote] = useState(jobApplicationNote)
 
   return(
     <div className='col-4'>
@@ -15,9 +15,9 @@ const NoteColumn = ({note}) => {
       </div>
       <div className='column-body'>
         {editNoteFormIsOpen ?
-          <EditNoteForm Note={Note} setNote={setNote} setEditNoteFormIsOpen={setEditNoteFormIsOpen} />
+          <EditNoteForm note={note} setNote={setNote} setEditNoteFormIsOpen={setEditNoteFormIsOpen} />
           :
-          Note !== '' ? <SimpleFormat text={Note} /> : 'add a note'
+          note !== '' ? <SimpleFormat text={note} /> : 'add a note'
         }
       </div>
     </div>
