@@ -7,7 +7,7 @@ import { updateStepRequest } from 'services/backend/step'
 const EditStepForm = ({id, category, date, description, setUpdateStepFormIsOpen, steps, setSteps}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   const [categoryInput, setCategoryInput] = useState(category)
-  const [dateInput, setDateInput] = useState(date)
+  const [dateInput, setDateInput] = useState(date.slice(0, -8))
   const [descriptionInput, setDescriptionInput] = useState(description)
 
   const handleSubmit = async (e) => {
