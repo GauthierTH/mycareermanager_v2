@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import moment from 'moment'
+import SimpleFormat from '@16g/react-simple-format';
 
 import EditStepForm from './EditStepForm'
 import IsDoneCheckbox from './IsDoneCheckbox'
@@ -25,7 +26,7 @@ const StepCard = ({id, category, date, description, is_done, steps, setSteps}) =
     <div className='card'>
       <div>{category}</div>
       <div>{moment(date).format('ddd, MMM D, h:mm a')}</div>
-      <div>{description}</div>
+      <SimpleFormat text={description} />
       <div>{is_done}</div>
       <IsDoneCheckbox
         id={id}

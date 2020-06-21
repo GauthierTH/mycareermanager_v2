@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SimpleFormat from '@16g/react-simple-format';
 
 import EditJobDescriptionForm from './EditJobDescriptionForm'
   
@@ -15,7 +16,7 @@ const JobDescription = ({job_description}) => {
       {editJobDescriptionFormIsOpen ?
         <EditJobDescriptionForm jobDescription={jobDescription} setJobDescription={setJobDescription} setEditJobDescriptionFormIsOpen={setEditJobDescriptionFormIsOpen} />
         :
-        jobDescription !== '' ? jobDescription : 'add a description'
+        jobDescription !== '' ? <SimpleFormat text={jobDescription} /> : 'add a description'
       }
     </div>
   )
