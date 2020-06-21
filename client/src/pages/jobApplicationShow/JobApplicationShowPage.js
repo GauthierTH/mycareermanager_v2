@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getJobApplicationRequest } from 'services/backend/jobApplication'
 import StepsSection from './step/StepsSection'
 import JobDetailsColumn from './jobDetails/JobDetailsColumn'
+import NoteColumn from './note/NoteColumn'
   
 const JobApplicationShowPage = () => {
   let { id } = useParams();
@@ -31,8 +32,8 @@ const JobApplicationShowPage = () => {
           </div>
           <div className='row m-0'>
             <JobDetailsColumn job_offer_link={jobApplication.job_offer_link} job_description={jobApplication.job_description} />
-            {/* <Note />
-            <Contacts /> */}
+            <NoteColumn note={jobApplication.note} />
+            {/* <Contacts /> */}
           </div>
         </div>
       </div>
