@@ -9,7 +9,7 @@ const JobDescription = ({job_description}) => {
   return(
     <div>
       <div className='row m-0'>
-        <h4>Job offer</h4>
+        <h4>Job description</h4>
         <button onClick={() => setEditJobDescriptionFormIsOpen(true)}>edit</button>
       </div>
       {editJobDescriptionFormIsOpen ?

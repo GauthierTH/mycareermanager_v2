@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import { updateStepRequest } from 'services/backend/step'
   
@@ -42,10 +43,10 @@ const EditStepForm = ({id, category, date, description, setUpdateStepFormIsOpen,
       </div>
       <div className="form-group">
         <label>Description:</label>
-        <input type="text" className="form-control" value={descriptionInput} onChange={(e) => setDescriptionInput(e.target.value)} />
+        <TextareaAutosize className="form-control" value={descriptionInput} onChange={(e) => setDescriptionInput(e.target.value)} />
       </div>
      
-      <button type="submit" className="btn btn-primary">Create</button>
+      <button type="submit" className="btn btn-primary">Update</button>
 
       <button onClick={() => setUpdateStepFormIsOpen(false)}>Cancel</button>
     </form>
