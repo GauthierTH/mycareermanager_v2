@@ -36,13 +36,13 @@ const App = () => {
     <Router>
       {isAuthenticated && <Navbar />}
       <Switch>
-        <UnauthRoute exact path="/login" component={LoginPage} />
-        <UnauthRoute exact path="/register" component={RegisterPage} />
+        <UnauthRoute path="/login" component={LoginPage} />
+        <UnauthRoute path="/register" component={RegisterPage} />
         <Route exact path="/">
           <HomePage />
         </Route>
-        <AuthRoute exact path='/my-account' component={AccountPage} />
-        <AuthRoute exact path='/job-application/:id' component={JobApplicationShowPage} />
+        <AuthRoute path='/my-account' component={AccountPage} />
+        <AuthRoute path='/job-application/:id' component={JobApplicationShowPage} />
       </Switch>
     </Router>
   )
