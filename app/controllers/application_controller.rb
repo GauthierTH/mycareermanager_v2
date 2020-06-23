@@ -24,10 +24,6 @@ class ApplicationController < ActionController::API
     }, status: :bad_request
   end
 
-  def fallback_index_html
-    render file: 'public/index.html'
-  end
-
   protected
 
   def configure_permitted_parameters
