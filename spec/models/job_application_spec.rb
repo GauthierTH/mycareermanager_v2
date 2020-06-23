@@ -7,7 +7,7 @@
 #  id              :bigint           not null, primary key
 #  company_name    :string
 #  job_description :text
-#  job_offer_link  :string
+#  job_offer_url  :string
 #  note            :text
 #  position        :string
 #  priority        :integer          default("low"), not null

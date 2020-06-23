@@ -7,7 +7,7 @@
 #  id              :bigint           not null, primary key
 #  company_name    :string
 #  job_description :text
-#  job_offer_link  :string
+#  job_offer_url  :string
 #  note            :text
 #  position        :string
 #  priority        :integer          default("low"), not null
@@ -25,7 +25,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class JobApplicationSerializer < ActiveModel::Serializer
-  attributes :id, :company_name, :job_description, :job_offer_link, :note, :position, :status, :priority
+  attributes :id, :company_name, :job_description, :job_offer_url, :note, :position, :status, :priority
 
   has_many :steps, serializer: StepSerializer
   has_many :contacts, serializer: ContactSerializer

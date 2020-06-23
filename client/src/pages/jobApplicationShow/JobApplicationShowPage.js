@@ -32,7 +32,7 @@ const JobApplicationShowPage = () => {
             <h1>{jobApplication.position} at {jobApplication.company_name}</h1>
           </div>
           <div className='row m-0'>
-            <JobDetailsColumn job_offer_link={jobApplication.job_offer_link} job_description={jobApplication.job_description} />
+            <JobDetailsColumn job_offer_url={jobApplication.job_offer_url} job_description={jobApplication.job_description} />
             <NoteColumn jobApplicationNote={jobApplication.note} />
             <ContactColumn jobApplicationContacts={jobApplication.contacts} />
           </div>

@@ -13,11 +13,11 @@ const EditJobOfferLinkForm = ({jobOfferLink, setJobOfferLink, setEditJobOfferLin
     e.preventDefault()
 
     let data = {
-      job_offer_link: jobOfferLinkInput
+      job_offer_url: jobOfferLinkInput
     }
     
     let updatedJobApplication = await updateJobApplicationRequest(bearerToken, data, id)
-    setJobOfferLink(updatedJobApplication.job_offer_link)
+    setJobOfferLink(updatedJobApplication.job_offer_url)
 
     setEditJobOfferLinkFormIsOpen(false)
   }
