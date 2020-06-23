@@ -20,7 +20,7 @@ user = User.create(
   identified_job_application = JobApplication.create(
     company_name: Faker::Company.name,
     job_description: Faker::Lorem.sentence(word_count: 50),
-    job_offer_link: Faker::Internet.url,
+    job_offer_url: Faker::Internet.url,
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :identified,
@@ -31,7 +31,7 @@ user = User.create(
   applied_job_application = JobApplication.create(
     company_name: Faker::Company.name,
     job_description: Faker::Lorem.sentence(word_count: 50),
-    job_offer_link: Faker::Internet.url,
+    job_offer_url: Faker::Internet.url,
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :applied,
@@ -50,7 +50,7 @@ user = User.create(
   in_progress_job_application = JobApplication.create(
     company_name: Faker::Company.name,
     job_description: Faker::Lorem.sentence(word_count: 50),
-    job_offer_link: Faker::Internet.url,
+    job_offer_url: Faker::Internet.url,
     note: Faker::Lorem.sentence(word_count: 50),
     position: Faker::Company.profession,
     status: :in_progress,

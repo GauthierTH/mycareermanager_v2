@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import EditJobOfferLinkForm from './EditJobOfferLinkForm'
   
-const JobOfferLink = ({job_offer_link}) => {
+const JobOfferLink = ({job_offer_url}) => {
   const [editJobOfferLinkFormIsOpen, setEditJobOfferLinkFormIsOpen] = useState(false)
-  const [jobOfferLink, setJobOfferLink] = useState(job_offer_link)
+  const [jobOfferLink, setJobOfferLink] = useState(job_offer_url)
 
   return(
     <div>
