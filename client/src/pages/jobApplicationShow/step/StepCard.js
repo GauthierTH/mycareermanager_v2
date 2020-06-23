@@ -7,16 +7,16 @@ import IsDoneCheckbox from './IsDoneCheckbox'
 import DeleteStepButton from './DeleteStepButton'
   
 const StepCard = ({id, category, date, description, is_done, steps, setSteps}) => {
-  const [updateStepFormIsOpen, setUpdateStepFormIsOpen] = useState(false)
+  const [editStepFormIsOpen, setEditStepFormIsOpen] = useState(false)
 
-  if(updateStepFormIsOpen) {
+  if(editStepFormIsOpen) {
     return(
       <EditStepForm
         id={id}
         category={category}
         date={date}
         description={description}
-        setUpdateStepFormIsOpen={setUpdateStepFormIsOpen}
+        setEditStepFormIsOpen={setEditStepFormIsOpen}
         setSteps={setSteps}
         steps={steps}
       />
@@ -34,7 +34,7 @@ const StepCard = ({id, category, date, description, is_done, steps, setSteps}) =
         setSteps={setSteps}
         steps={steps}
       />
-      <button onClick={() => setUpdateStepFormIsOpen(true)}>edit</button>
+      <button onClick={() => setEditStepFormIsOpen(true)}>edit</button>
       <DeleteStepButton
         id={id}
         setSteps={setSteps}
