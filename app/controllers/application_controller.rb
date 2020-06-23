@@ -25,9 +25,9 @@ class ApplicationController < ActionController::API
   end
 
   def fallback_index_html
-    render :file => 'public/index.html'
+    render file: 'public/index.html'
   end
-  
+
   protected
 
   def configure_permitted_parameters
