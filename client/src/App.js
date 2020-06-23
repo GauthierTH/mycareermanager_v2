@@ -33,7 +33,7 @@ const App = () => {
   )
 
   return (
-    <Router>
+    <Router basename={'mycareermanager_v2'}>
       {isAuthenticated && <Navbar />}
       <Switch>
         <UnauthRoute path="/login" component={LoginPage} />
