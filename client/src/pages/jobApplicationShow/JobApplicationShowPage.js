@@ -6,6 +6,7 @@ import { getJobApplicationRequest } from 'services/backend/jobApplication'
 import StepsSection from './step/StepsSection'
 import JobDetailsColumn from './jobDetails/JobDetailsColumn'
 import NoteColumn from './note/NoteColumn'
+import ContactColumn from './contact/ContactColumn'
   
 const JobApplicationShowPage = () => {
   let { id } = useParams();
@@ -32,8 +33,8 @@ const JobApplicationShowPage = () => {
           </div>
           <div className='row m-0'>
             <JobDetailsColumn job_offer_link={jobApplication.job_offer_link} job_description={jobApplication.job_description} />
-            <NoteColumn note={jobApplication.note} />
-            {/* <Contacts /> */}
+            <NoteColumn jobApplicationNote={jobApplication.note} />
+            <ContactColumn jobApplicationContacts={jobApplication.contacts} />
           </div>
         </div>
       </div>

@@ -5,16 +5,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import { updateJobApplicationRequest } from 'services/backend/jobApplication'
   
-const EditNoteForm = ({Note, setNote, setEditNoteFormIsOpen}) => {
+const EditNoteForm = ({note, setNote, setEditNoteFormIsOpen}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   let { id } = useParams();
-  const [NoteInput, setNoteInput] = useState(Note)
+  const [noteInput, setNoteInput] = useState(note)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     let data = {
-      note: NoteInput
+      note: noteInput
     }
     
     let updatedJobApplication = await updateJobApplicationRequest(bearerToken, data, id)
@@ -25,7 +25,7 @@ const EditNoteForm = ({Note, setNote, setEditNoteFormIsOpen}) => {
 
   return(
     <form onSubmit={handleSubmit}>
-      <TextareaAutosize className="form-control" value={NoteInput} onChange={(e) => setNoteInput(e.target.value)} placeholder='add a note' />
+      <TextareaAutosize className="form-control" value={noteInput} onChange={(e) => setNoteInput(e.target.value)} placeholder='add a note' />
       <button type="submit" className="btn btn-primary">Update</button>
 
       <button onClick={() => setEditNoteFormIsOpen(false)}>Cancel</button>

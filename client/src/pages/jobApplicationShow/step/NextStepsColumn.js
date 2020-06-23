@@ -5,18 +5,18 @@ import plusSolid from 'assets/images/plus-solid.svg'
 import NewStepForm from './NewStepForm'
   
 const NextStepsColumn = ({nextSteps, setSteps, steps}) => {
-  const [createStepFormIsOpen, setCreateStepFormIsOpen] = useState(false)
+  const [newStepFormIsOpen, setNewStepFormIsOpen] = useState(false)
 
   return(
     <div>
       <div className='column-header'>
         <h2>Next Steps</h2>
-        <img src={plusSolid} className='plus-solid' onClick={() => setCreateStepFormIsOpen(true)} />
+        <img src={plusSolid} className='plus-solid' onClick={() => setNewStepFormIsOpen(true)} />
       </div>
       <div className='column-body'>
-        {createStepFormIsOpen && 
+        {newStepFormIsOpen && 
           <NewStepForm 
-            setCreateStepFormIsOpen={setCreateStepFormIsOpen}
+            setNewStepFormIsOpen={setNewStepFormIsOpen}
             setSteps={setSteps}
             steps={steps}
           />
