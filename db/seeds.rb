@@ -81,4 +81,15 @@ user = User.create(
     is_done: false,
     job_application: in_progress_job_application
   )
+
+  [identified_job_application, applied_job_application, in_progress_job_application].each do |job_application|
+    Contact.create(
+      email: Faker::Internet.email,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+      position: Faker::Company.profession,
+      job_application: job_application
+    )
+  end
 end
