@@ -1,22 +1,13 @@
 {
-  "name": "mycareermanager",
-  "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
+  "name": "list-of-ingredients",
+  "license": "MIT",
+  "engines": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && yarn install && yarn run build && cd ..",
+    "build": "yarn --cwd client install && yarn --cwd client build",
     "deploy": "cp -a client/build/. public/",
-    "postinstall": "yarn run build && yarn run deploy && echo 'Client built!'"
-  },
-  "repository": "git+https://github.com/GauthierTH/mycareermanager_v2.git",
-  "author": "gauthier <gauthier.sayarath@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GauthierTH/mycareermanager_v2/issues"
-  },
-  "homepage": "https://github.com/GauthierTH/mycareermanager_v2#readme"
+    "heroku-postbuild": "yarn build && yarn deploy"
+  }
 }
