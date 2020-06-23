@@ -12,11 +12,8 @@
     "deploy": "cp -a client/build/. public/",
     "postinstall": "yarn run build && yarn run deploy && echo 'Client built!'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GauthierTH/mycareermanager_v2.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/GauthierTH/mycareermanager_v2.git",
+  "author": "gauthier <gauthier.sayarath@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GauthierTH/mycareermanager_v2/issues"
