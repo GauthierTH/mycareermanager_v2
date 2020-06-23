@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def render_resource(resource)
@@ -25,7 +27,9 @@ class ApplicationController < ActionController::API
   end
 
   def fallback_index_html
-    render file: 'public/index.html'
+    respond_to do |format|
+      format.html { render body: Rails.root.join('public/index.html').read }
+    end
   end
 
   protected
