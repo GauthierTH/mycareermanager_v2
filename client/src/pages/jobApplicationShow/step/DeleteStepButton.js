@@ -7,7 +7,7 @@ const DeleteStepButton = ({id, steps, setSteps}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
 
   const handleClick = async () => {
-    let step = await deleteStepRequest(bearerToken, id)
+    await deleteStepRequest(bearerToken, id)
     setSteps(steps.filter(step => step.id !== id))
   }
 
