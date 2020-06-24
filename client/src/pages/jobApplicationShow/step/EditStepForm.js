@@ -4,7 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import { updateStepRequest } from 'services/backend/step'
   
-const EditStepForm = ({id, category, date, description, setUpdateStepFormIsOpen, steps, setSteps}) => {
+const EditStepForm = ({id, category, date, description, setEditStepFormIsOpen, steps, setSteps}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   const [categoryInput, setCategoryInput] = useState(category)
   const [dateInput, setDateInput] = useState(date.slice(0, -8))
@@ -22,7 +22,7 @@ const EditStepForm = ({id, category, date, description, setUpdateStepFormIsOpen,
     let updatedStep = await updateStepRequest(bearerToken, data, id)
     setSteps(steps.map(step => step.id === updatedStep.id ? updatedStep : step ))
 
-    setUpdateStepFormIsOpen(false)
+    setEditStepFormIsOpen(false)
   }
 
   return(
@@ -48,7 +48,7 @@ const EditStepForm = ({id, category, date, description, setUpdateStepFormIsOpen,
      
       <button type="submit" className="btn btn-primary">Update</button>
 
-      <button onClick={() => setUpdateStepFormIsOpen(false)}>Cancel</button>
+      <button onClick={() => setEditStepFormIsOpen(false)}>Cancel</button>
     </form>
   )
 }
