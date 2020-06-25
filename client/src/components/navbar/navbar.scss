@@ -5,17 +5,6 @@ $beige-border: 1px solid rgb(216, 209, 186);
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    &:hover {
-      font-weight: 700;
-    }
-    &:visited {
-      color: black;
-    }
-  }
 }
 
 .rocket-icon {

@@ -14,15 +14,15 @@ const Home = () => {
   }
 
   return(
-    <div>
+    <>
       <h1>
         {moment().format('LLLL')}
       </h1>
-      <div className='row justify-content-center'>
+      <div className='lists'>
         <NextStepsColumn />
         <JobApplicationSection />
       </div>
-    </div>
+    </>
   )
 }
   

@@ -8,13 +8,13 @@ const JobApplicationColumn = ({title, columnJobApplications, setJobApplications,
   const [createJobApplicationFormIsOpen, setcreateJobApplicationFormIsOpen] = useState(false)
 
   return(
-    <div className='job-application-column'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>{title} ({columnJobApplications.length})</h2>
-        <img src={plusSolid} className='plus-solid' onClick={() => setcreateJobApplicationFormIsOpen(true)} />
+        <img src={plusSolid} className='plus-button' onClick={() => setcreateJobApplicationFormIsOpen(true)} />
       </div>
 
-      <div className='column-body'>
+      <div className='list-body'>
         {createJobApplicationFormIsOpen && 
           <NewJobApplicationForm 
             setcreateJobApplicationFormIsOpen={setcreateJobApplicationFormIsOpen}

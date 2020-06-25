@@ -18,11 +18,11 @@ const NextStepsColumn = () => {
   }, [])
 
   return(
-    <div className='next-step-column'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Next Steps</h2>
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {nextSteps.map(step => 
           <NextStepCard
             key={step.id}

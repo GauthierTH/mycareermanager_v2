@@ -5,10 +5,14 @@ import { priorityHelper } from 'helpers/priority'
   
 const JobApplicationCard = ({company_name, position, priority, id}) => {
   return(
-    <div>
-      <div><Link to={`/job-application/${id}`}>{company_name}</Link></div>
-      <div>{position}</div>
-      <div>{priorityHelper[priority]}</div>
+    <div className='card index-card'>
+      <div>
+        <div><Link to={`/job-application/${id}`}><h3>{position}</h3></Link></div>
+        <div>{company_name}</div>
+      </div>
+      <div>
+        {priorityHelper[priority]}
+      </div>
     </div>
   )
 }
