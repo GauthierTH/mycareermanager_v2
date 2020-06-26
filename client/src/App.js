@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import { useSelector } from 'react-redux';
 
 import HomePage from './pages/home/HomePage'
-import Navbar from './components/navbar/Navbar'
+import Navbar from './components/Navbar'
 import LoginPage from './pages/login/LoginPage'
 import RegisterPage from './pages/register/RegisterPage'
 import AccountPage from './pages/account/AccountPage'
