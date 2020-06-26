@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { createStepRequest } from 'services/backend/step'
   
-const NewStepForm = ({setCreateStepFormIsOpen, setSteps, steps}) => {
+const NewStepForm = ({setNewStepFormIsOpen, setSteps, steps}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   let { id } = useParams();
   const [category, setCategory] = useState('interview')
@@ -23,7 +23,7 @@ const NewStepForm = ({setCreateStepFormIsOpen, setSteps, steps}) => {
     let step = await createStepRequest(bearerToken, data, id)
     setSteps([...steps, step])
 
-    setCreateStepFormIsOpen(false)
+    setNewStepFormIsOpen(false)
   }
 
   return(
@@ -49,7 +49,7 @@ const NewStepForm = ({setCreateStepFormIsOpen, setSteps, steps}) => {
      
       <button type="submit" className="btn btn-primary">Create</button>
 
-      <button onClick={() => setCreateStepFormIsOpen(false)}>Cancel</button>
+      <button onClick={() => setNewStepFormIsOpen(false)}>Cancel</button>
     </form>
   )
 }

@@ -25,22 +25,18 @@ const JobApplicationShowPage = () => {
 
   if(Object.keys(jobApplication).length !== 0) {
     return(
-      <div className='row m-0'>
-        <StepsSection jobApplicationSteps={jobApplication.steps} />
-        <div className='col-9'>
-          <div>
-            <h1>{jobApplication.position} at {jobApplication.company_name}</h1>
-          </div>
-          <div className='row m-0'>
-            <JobDetailsColumn job_offer_url={jobApplication.job_offer_url} job_description={jobApplication.job_description} />
-            <NoteColumn jobApplicationNote={jobApplication.note} />
-            <ContactColumn jobApplicationContacts={jobApplication.contacts} />
-          </div>
+      <>
+        <h1>{jobApplication.position} at {jobApplication.company_name}</h1>
+        <div className='lists'>
+          <StepsSection jobApplicationSteps={jobApplication.steps} />
+          <JobDetailsColumn job_offer_url={jobApplication.job_offer_url} job_description={jobApplication.job_description} />
+          <NoteColumn jobApplicationNote={jobApplication.note} />
+          <ContactColumn jobApplicationContacts={jobApplication.contacts} />
         </div>
-      </div>
+      </>
     )
   }
-  return <div></div>
+  return <></>
 }
   
 export default JobApplicationShowPage

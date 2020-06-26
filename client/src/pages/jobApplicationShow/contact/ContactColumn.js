@@ -9,12 +9,12 @@ const ContactColumn = ({jobApplicationContacts}) => {
   const [contacts, setContacts] = useState(jobApplicationContacts)
 
   return(
-    <div className='col-4'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Contacts</h2>
-        <img src={plusSolid} className='plus-solid' onClick={() => setNewContactFormIsOpen(true)} />
+        <img src={plusSolid} className='plus-button' onClick={() => setNewContactFormIsOpen(true)} />
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {newContactFormIsOpen && 
           <NewContactForm 
             setNewContactFormIsOpen={setNewContactFormIsOpen}

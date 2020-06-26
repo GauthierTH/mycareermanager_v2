@@ -8,12 +8,12 @@ const NoteColumn = ({jobApplicationNote}) => {
   const [note, setNote] = useState(jobApplicationNote)
 
   return(
-    <div className='col-4'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Note</h2>
         <button onClick={() => setEditNoteFormIsOpen(true)}>edit</button>
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {editNoteFormIsOpen ?
           <EditNoteForm note={note} setNote={setNote} setEditNoteFormIsOpen={setEditNoteFormIsOpen} />
           :
