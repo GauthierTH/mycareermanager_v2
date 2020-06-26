@@ -18,29 +18,29 @@ const JobApplicationSection = () => {
   }, [])
 
   return(
-    <div className='row justify-content-center col-9'>
+    <>
       <JobApplicationColumn 
         status='identified' 
-        title='IDENTIFIED' 
+        title='Identified' 
         setJobApplications={setJobApplications}
         jobApplications={jobApplications}
         columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'identified')} 
       />
       <JobApplicationColumn 
         status='applied' 
-        title='APPLIED' 
+        title='Applied' 
         setJobApplications={setJobApplications}
         jobApplications={jobApplications}
         columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'applied')} 
       />
       <JobApplicationColumn 
         status='in_progress' 
-        title='IN PROGRESS' 
+        title='In progress' 
         setJobApplications={setJobApplications}
         jobApplications={jobApplications}
         columnJobApplications={jobApplications.filter(jobApplication => jobApplication.status === 'in_progress')} 
       />
-    </div>
+    </>
   )
 }
   
