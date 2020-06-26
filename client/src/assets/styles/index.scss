@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 
 @import './icon.scss';
+@import './utilities.scss';
 
 @mixin sm {
   @media (max-width: #{540px}) {
@@ -46,6 +47,9 @@ h3 {
 
 button {
   cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
 }
 
 a {
@@ -60,13 +64,21 @@ a {
   }
 }
 
-.justify-content-between{
-  display: flex;
-  justify-content: space-between;
-}
-
-.m-0 {
-  margin: 0!important;
+input,
+textarea, 
+select {
+  border-radius: 5px;
+  border: 1px solid $light-purple-blue;
+  outline: none;
+  padding: 5px;
+  background-color: white;
+  &:hover {
+    border-color: $regular-purple-blue;
+  }
+  &:disabled {
+    background-color: $regular-purple-blue;
+    color: white;
+  }
 }
 
 .badge {
@@ -80,6 +92,23 @@ a {
   margin-bottom: 5px;
 }
 
+.orange-bright-background {
+  background-color: #e06e58;
+}
+.orange-light-background {
+  background-color: #e6aa9e;
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
 .lists {
   $gap: 10px;
   
@@ -88,16 +117,6 @@ a {
   > * {
     flex: 0 0 auto;
     margin-left: $gap;
-  }
-
-  .card {
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    &:last-child {
-      margin-bottom: 0px;
-    }
   }
 
   .list {
@@ -129,18 +148,6 @@ a {
   }
 }
 
-.index-card {
-  display: flex;
-  justify-content: space-between;
-}
-
-.orange-bright-background {
-  background-color: #e06e58;
-}
-.orange-light-background {
-  background-color: #e6aa9e;
-}
-
 .plus-button {
   background-color: white;
   border: 1px solid transparent;
@@ -152,4 +159,16 @@ a {
   justify-content: center;
   cursor: pointer;
   padding: 5px;
+}
+
+.btn-primary {
+  background-color: $medium-purple-blue;
+  color: white;
+  border: 1px solid $medium-purple-blue;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: $medium-purple-blue;
+  border: 1px solid $medium-purple-blue;
 }

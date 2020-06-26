@@ -27,30 +27,38 @@ const NewJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJob
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Company:</label>
-        <input type="text" className="form-control" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
-      </div>
-      <div className="form-group">
-        <label>Position:</label>
-        <input type="text" className="form-control" value={position} onChange={(e) => setPosition(e.target.value)} />
-      </div>
-      <div className="form-group">
-        <label>Priority:</label>
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option defaultValue="low">low</option>
-          <option value="medium">medium</option>
-          <option value="high">high</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>Status:</label>
-        <input type="text" value={title} disabled />
-      </div>
-      <button type="submit" className="btn btn-primary">Create</button>
+    <form onSubmit={handleSubmit} className='card'>
+      <table>
+        <tbody>
+          <tr>
+            <td className='text-right'>Company: </td>
+            <td><input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'>Position: </td>
+            <td><input type="text" value={position} onChange={(e) => setPosition(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'>Priority: </td>
+            <td>
+              <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+                <option defaultValue="low">low</option>
+                <option value="medium">medium</option>
+                <option value="high">high</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td className='text-right'>Status: </td>
+            <td><input type="text" value={title} disabled /></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <button onClick={() => setcreateJobApplicationFormIsOpen(false)}>Cancel</button>
+      <div className='justify-content-end mt-1'>
+        <button className='btn-primary mr-1' type="submit">Create</button>
+        <button className='btn-secondary' onClick={() => setcreateJobApplicationFormIsOpen(false)}>Cancel</button>
+      </div>
     </form>
   )
 }
