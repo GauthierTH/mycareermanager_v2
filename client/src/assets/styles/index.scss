@@ -21,10 +21,15 @@ body{
 
 #root {
   $navbar-height: 67px;
+  $title-height: 87px;
+  $sm-title-height: 48px;
 
   height: 100vh;
   display: grid;
-  grid-template-rows: $navbar-height 1fr;
+  grid-template-rows: $navbar-height $title-height 1fr;
+  @include sm {
+    grid-template-rows: $navbar-height $sm-title-height 1fr;
+  }
 }
 
 h1 {
