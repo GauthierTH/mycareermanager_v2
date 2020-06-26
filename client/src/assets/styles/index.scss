@@ -172,3 +172,70 @@ select {
   color: $medium-purple-blue;
   border: 1px solid $medium-purple-blue;
 }
+
+/*----- navbar -----*/
+$border: 1px solid black;
+
+.navbar {
+  border-bottom: $border;
+  padding: 10px;
+}
+
+.rocket-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+.dropdown {
+  padding-top: 4.5px;
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-button {
+  border-radius: 5px;
+  border: $border;
+  padding: 10px;
+}
+
+.dropdown-arrow {
+  width: 15px;
+  height: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  border-radius: 0px 0px 5px 5px;
+  border-bottom: $border;
+  border-right: $border;
+  border-left: $border;
+  padding: 10px;
+  background-color: white;
+  z-index: 1000;
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  li {
+    list-style-type: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+
+.username {
+  margin-right: 5px;
+  @include sm {
+    display: none;
+  }
+}
+/*-----  -----*/
