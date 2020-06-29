@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { updateJobApplicationRequest } from 'services/backend/jobApplication'
@@ -25,10 +25,11 @@ const EditJobDescriptionForm = ({jobDescription, setJobDescription, setEditJobDe
 
   return(
     <form onSubmit={handleSubmit}>
-      <TextareaAutosize className="form-control" value={jobDescriptionInput} onChange={(e) => setJobDescriptionInput(e.target.value)} placeholder='add a description' />
-      <button type="submit" className="btn btn-primary">Update</button>
-
-      <button onClick={() => setEditJobDescriptionFormIsOpen(false)}>Cancel</button>
+      <TextareaAutosize cols='38' value={jobDescriptionInput} onChange={(e) => setJobDescriptionInput(e.target.value)} placeholder='add a description' />
+      <div className='justify-content-end mt-1'>
+        <button type='submit' className='btn-primary'>Update</button>
+        <button className='btn-secondary' onClick={() => setEditJobDescriptionFormIsOpen(false)}>Cancel</button>
+      </div>
     </form>
   )
 }

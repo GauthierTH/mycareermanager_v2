@@ -43,11 +43,20 @@ h2 {
   margin: 0;
 }
 
+h4 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
 h3 {
   margin: 0;
   &:hover {
     text-decoration: underline;
   }
+}
+
+p {
+  margin: 0;
 }
 
 button {
@@ -72,6 +81,7 @@ a {
 input,
 textarea, 
 select {
+  font-family: "Manrope", sans-serif;
   border-radius: 5px;
   border: 1px solid $light-purple-blue;
   outline: none;
@@ -86,6 +96,10 @@ select {
   }
 }
 
+label {
+  font-size: small;
+}
+
 .badge {
   align-items: center;
   border-radius: 5px;
@@ -94,7 +108,6 @@ select {
   padding: 5px;
   font-size: small;
   color: white;
-  margin-bottom: 5px;
 }
 
 .orange-bright-background {
@@ -137,6 +150,7 @@ select {
 
     .list-header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       height: $list-header-height;
       background-color: $regular-purple-blue;
@@ -153,23 +167,11 @@ select {
   }
 }
 
-.plus-button {
-  background-color: white;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 5px;
-}
-
 .btn-primary {
   background-color: $medium-purple-blue;
   color: white;
   border: 1px solid $medium-purple-blue;
+  margin-right: 0.25rem;
 }
 
 .btn-secondary {
@@ -243,7 +245,6 @@ $border: 1px solid black;
     display: none;
   }
 }
-/*-----  -----*/
 
 .step-section {
   display: grid;
@@ -254,6 +255,6 @@ $border: 1px solid black;
   grid-row: 1 / 3;
 }
 
-.past-step-list {
-  grid-row: 2;
+.job-offer-edit {
+  width: calc(100% - 10px)
 }

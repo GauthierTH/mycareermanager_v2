@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { createJobApplicationRequest } from 'services/backend/jobApplication'
   
-const NewJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
+const NewJobApplicationForm = ({setNewJobApplicationFormIsOpen, title, setJobApplications, status, jobApplications}) => {
   const bearerToken = useSelector(state => state.user.bearerToken)
   let history = useHistory();
   const [companyName, setCompanyName] = useState('')
@@ -31,15 +31,15 @@ const NewJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJob
       <table>
         <tbody>
           <tr>
-            <td className='text-right'>Company: </td>
+            <td className='text-right'><label>Company:</label></td>
             <td><input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} /></td>
           </tr>
           <tr>
-            <td className='text-right'>Position: </td>
+            <td className='text-right'><label>Position:</label></td>
             <td><input type="text" value={position} onChange={(e) => setPosition(e.target.value)} /></td>
           </tr>
           <tr>
-            <td className='text-right'>Priority: </td>
+            <td className='text-right'><label>Priority:</label></td>
             <td>
               <select value={priority} onChange={(e) => setPriority(e.target.value)}>
                 <option defaultValue="low">low</option>
@@ -49,15 +49,15 @@ const NewJobApplicationForm = ({setcreateJobApplicationFormIsOpen, title, setJob
             </td>
           </tr>
           <tr>
-            <td className='text-right'>Status: </td>
+            <td className='text-right'><label>Status:</label></td>
             <td><input type="text" value={title} disabled /></td>
           </tr>
         </tbody>
       </table>
 
       <div className='justify-content-end mt-1'>
-        <button className='btn-primary mr-1' type="submit">Create</button>
-        <button className='btn-secondary' onClick={() => setcreateJobApplicationFormIsOpen(false)}>Cancel</button>
+        <button className='btn-primary' type="submit">Create</button>
+        <button className='btn-secondary' onClick={() => setNewJobApplicationFormIsOpen(false)}>Cancel</button>
       </div>
     </form>
   )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SimpleFormat from '@16g/react-simple-format';
 
 import EditNoteForm from './EditNoteForm'
+import EditButton from 'components/EditButton'
   
 const NoteColumn = ({jobApplicationNote}) => {
   const [editNoteFormIsOpen, setEditNoteFormIsOpen] = useState(false)
@@ -11,7 +12,7 @@ const NoteColumn = ({jobApplicationNote}) => {
     <div className='list'>
       <div className='list-header'>
         <h2>Note</h2>
-        <button onClick={() => setEditNoteFormIsOpen(true)}>edit</button>
+        <EditButton setEditItemFormIsOpen={setEditNoteFormIsOpen} />
       </div>
       <div className='list-body'>
         {editNoteFormIsOpen ?

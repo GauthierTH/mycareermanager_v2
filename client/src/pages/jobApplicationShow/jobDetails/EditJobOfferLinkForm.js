@@ -24,10 +24,11 @@ const EditJobOfferLinkForm = ({jobOfferLink, setJobOfferLink, setEditJobOfferLin
 
   return(
     <form onSubmit={handleSubmit}>
-      <input type="url" className="form-control" value={jobOfferLinkInput} onChange={(e) => setJobOfferLinkInput(e.target.value)} placeholder='add an offer' />
-      <button type="submit" className="btn btn-primary">Update</button>
-
-      <button onClick={() => setEditJobOfferLinkFormIsOpen(false)}>Cancel</button>
+      <input type="url" value={jobOfferLinkInput} className='job-offer-edit' onChange={(e) => setJobOfferLinkInput(e.target.value)} placeholder='add an offer' />
+      <div className='justify-content-end mt-1'>
+        <button type="submit" className="btn-primary">Update</button>
+        <button className='btn-secondary' onClick={() => setEditJobOfferLinkFormIsOpen(false)}>Cancel</button>
+      </div>
     </form>
   )
 }

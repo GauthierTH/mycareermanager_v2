@@ -11,6 +11,7 @@ const JobDetailsColumn = ({job_offer_url, job_description}) => {
       </div>
       <div className='list-body'>
         <JobOfferLink job_offer_url={job_offer_url} />
+        <hr />
         <JobDescription job_description={job_description} />
       </div>
     </div>

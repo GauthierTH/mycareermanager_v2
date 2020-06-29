@@ -26,7 +26,7 @@ const JobApplicationShowPage = () => {
   if(Object.keys(jobApplication).length !== 0) {
     return(
       <>
-        <h1>{jobApplication.position} at {jobApplication.company_name}</h1>
+        <h1>{jobApplication.position} @ {jobApplication.company_name}</h1>
         <div className='lists'>
           <StepsSection jobApplicationSteps={jobApplication.steps} />
           <JobDetailsColumn job_offer_url={jobApplication.job_offer_url} job_description={jobApplication.job_description} />
