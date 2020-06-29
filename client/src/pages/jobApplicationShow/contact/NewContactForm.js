@@ -31,31 +31,36 @@ const NewContactForm = ({setNewContactFormIsOpen, setContacts, contacts}) => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Email:</label>
-        <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+    <form onSubmit={handleSubmit} className='card'>
+      <table>
+        <tbody>
+          <tr>
+            <td className='text-right'><label>Email:</label></td>
+            <td><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>First name:</label></td>
+            <td><input type="text" value={firstName} onChange={(e) => setFirsName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>Last name:</label></td>
+            <td><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>Phone number:</label></td>
+            <td><input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>Position:</label></td>
+            <td><input type="text" value={position} onChange={(e) => setPosition(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+        
+      <div className='justify-content-end mt-1'>
+        <button type="submit" className="btn-primary">Create</button>
+        <button className='btn-secondary' onClick={() => setNewContactFormIsOpen(false)}>Cancel</button>
       </div>
-      <div className="form-group">
-        <label>First name:</label>
-        <input type="text" className="form-control" value={firstName} onChange={(e) => setFirsName(e.target.value)} />
-      </div>
-      <div className="form-group">
-        <label>Last name:</label>
-        <input type="text" className="form-control" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-      </div>
-      <div className="form-group">
-        <label>Phone number:</label>
-        <input type="text" className="form-control" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-      </div>
-      <div className="form-group">
-        <label>Position:</label>
-        <input type="text" className="form-control" value={position} onChange={(e) => setPosition(e.target.value)} />
-      </div>
-     
-      <button type="submit" className="btn btn-primary">Create</button>
-
-      <button onClick={() => setNewContactFormIsOpen(false)}>Cancel</button>
     </form>
   )
 }

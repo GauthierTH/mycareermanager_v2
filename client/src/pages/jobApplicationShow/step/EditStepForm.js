@@ -26,29 +26,36 @@ const EditStepForm = ({id, category, date, description, setEditStepFormIsOpen, s
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Category:</label>
-        <select value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
-          <option value="interview">interview</option>
-          <option value="phone_call">phone call</option>
-          <option value="technical_test">technical test</option>
-          <option value="follow_up">follow-up</option>
-          <option value="application_sent">application sent</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>Date:</label>
-        <input type="datetime-local" className="form-control" value={dateInput} onChange={(e) => setDateInput(e.target.value)} required />
-      </div>
-      <div className="form-group">
-        <label>Description:</label>
-        <TextareaAutosize className="form-control" value={descriptionInput} onChange={(e) => setDescriptionInput(e.target.value)} />
-      </div>
+    <form onSubmit={handleSubmit} className='card'>
+      <table>
+        <tbody>
+          <tr>
+            <td className='text-right'><label>Category:</label></td>
+            <td>
+            <select value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
+              <option value='interview'>interview</option>
+              <option value='phone_call'>phone call</option>
+              <option value='technical_test'>technical test</option>
+              <option value='follow_up'>follow-up</option>
+              <option value='application_sent'>application sent</option>
+            </select>
+            </td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>Date:</label></td>
+            <td><input type='datetime-local' value={dateInput} onChange={(e) => setDateInput(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td className='text-right'><label>Description:</label></td>
+            <td><TextareaAutosize cols='24' value={descriptionInput} onChange={(e) => setDescriptionInput(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
      
-      <button type="submit" className="btn btn-primary">Update</button>
-
-      <button onClick={() => setEditStepFormIsOpen(false)}>Cancel</button>
+      <div className='justify-content-end mt-1'>
+        <button type='submit' className='btn-primary'>Update</button>
+        <button className='btn-secondary' onClick={() => setEditStepFormIsOpen(false)}>Cancel</button>
+      </div>
     </form>
   )
 }

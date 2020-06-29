@@ -5,12 +5,13 @@ import JobDescription from './JobDescription'
   
 const JobDetailsColumn = ({job_offer_url, job_description}) => {
   return(
-    <div className='col-4'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Job details</h2>
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         <JobOfferLink job_offer_url={job_offer_url} />
+        <hr />
         <JobDescription job_description={job_description} />
       </div>
     </div>

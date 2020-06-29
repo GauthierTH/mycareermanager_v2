@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 
 import JobApplicationCard from './JobApplicationCard'
-import plusSolid from 'assets/images/plus-solid.svg'
 import NewJobApplicationForm from './NewJobApplicationForm'
+import NewButton from 'components/NewButton'
   
 const JobApplicationColumn = ({title, columnJobApplications, setJobApplications, status, jobApplications}) => {
-  const [createJobApplicationFormIsOpen, setcreateJobApplicationFormIsOpen] = useState(false)
+  const [newJobApplicationFormIsOpen, setNewJobApplicationFormIsOpen] = useState(false)
 
   return(
     <div className='list'>
       <div className='list-header'>
         <h2>{title} ({columnJobApplications.length})</h2>
-        <img src={plusSolid} className='plus-button' onClick={() => setcreateJobApplicationFormIsOpen(true)} />
+        <NewButton setNewItemFormIsOpen={setNewJobApplicationFormIsOpen} />
       </div>
 
       <div className='list-body'>
-        {createJobApplicationFormIsOpen && 
+        {newJobApplicationFormIsOpen && 
           <NewJobApplicationForm 
-            setcreateJobApplicationFormIsOpen={setcreateJobApplicationFormIsOpen}
+            setNewJobApplicationFormIsOpen={setNewJobApplicationFormIsOpen}
             title={title}
             setJobApplications={setJobApplications}
             status={status}

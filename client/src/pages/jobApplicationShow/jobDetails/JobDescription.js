@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SimpleFormat from '@16g/react-simple-format';
 
 import EditJobDescriptionForm from './EditJobDescriptionForm'
+import EditButton from 'components/EditButton'
   
 const JobDescription = ({job_description}) => {
   const [editJobDescriptionFormIsOpen, setEditJobDescriptionFormIsOpen] = useState(false)
@@ -9,9 +10,9 @@ const JobDescription = ({job_description}) => {
 
   return(
     <div>
-      <div className='row m-0'>
+      <div className='row justify-content-between'>
         <h4>Job description</h4>
-        <button onClick={() => setEditJobDescriptionFormIsOpen(true)}>edit</button>
+        <EditButton setEditItemFormIsOpen={setEditJobDescriptionFormIsOpen} />
       </div>
       {editJobDescriptionFormIsOpen ?
         <EditJobDescriptionForm jobDescription={jobDescription} setJobDescription={setJobDescription} setEditJobDescriptionFormIsOpen={setEditJobDescriptionFormIsOpen} />

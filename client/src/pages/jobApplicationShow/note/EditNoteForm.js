@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { updateJobApplicationRequest } from 'services/backend/jobApplication'
@@ -25,10 +25,11 @@ const EditNoteForm = ({note, setNote, setEditNoteFormIsOpen}) => {
 
   return(
     <form onSubmit={handleSubmit}>
-      <TextareaAutosize className="form-control" value={noteInput} onChange={(e) => setNoteInput(e.target.value)} placeholder='add a note' />
-      <button type="submit" className="btn btn-primary">Update</button>
-
-      <button onClick={() => setEditNoteFormIsOpen(false)}>Cancel</button>
+      <TextareaAutosize cols='38' value={noteInput} onChange={(e) => setNoteInput(e.target.value)} placeholder='add a note' />
+      <div className='justify-content-end mt-1'>
+        <button type='submit' className='btn-primary'>Update</button>
+        <button className='btn-secondary' onClick={() => setEditNoteFormIsOpen(false)}>Cancel</button>
+      </div>
     </form>
   )
 }

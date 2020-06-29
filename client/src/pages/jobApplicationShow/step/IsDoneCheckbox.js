@@ -14,8 +14,14 @@ const IsDoneCheckbox = ({id, is_done, steps, setSteps}) => {
     setSteps(steps.map(step => step.id === updatedStep.id ? updatedStep : step ))
   }
 
+  const style = {
+    width: '17.5px',
+    height: '17.5px',
+    margin: '2.5px'
+  }
+
   return(
-    <input type="checkbox" checked={is_done} onChange={handleChange} />
+    <input type="checkbox" checked={is_done} onChange={handleChange} style={style} />
   )
 }
   

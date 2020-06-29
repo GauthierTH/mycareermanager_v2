@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import EditJobOfferLinkForm from './EditJobOfferLinkForm'
+import EditButton from 'components/EditButton'
   
 const JobOfferLink = ({job_offer_url}) => {
   const [editJobOfferLinkFormIsOpen, setEditJobOfferLinkFormIsOpen] = useState(false)
@@ -8,9 +9,9 @@ const JobOfferLink = ({job_offer_url}) => {
 
   return(
     <div>
-      <div className='row m-0'>
+      <div className='row justify-content-between'>
         <h4>Job offer</h4>
-        <button onClick={() => setEditJobOfferLinkFormIsOpen(true)}>edit</button>
+        <EditButton setEditItemFormIsOpen={setEditJobOfferLinkFormIsOpen} />
       </div>
       {editJobOfferLinkFormIsOpen ?
         <EditJobOfferLinkForm jobOfferLink={jobOfferLink} setJobOfferLink={setJobOfferLink} setEditJobOfferLinkFormIsOpen={setEditJobOfferLinkFormIsOpen} />

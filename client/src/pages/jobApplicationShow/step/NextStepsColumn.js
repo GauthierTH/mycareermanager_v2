@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 
 import StepCard from './StepCard'
-import plusSolid from 'assets/images/plus-solid.svg'
 import NewStepForm from './NewStepForm'
+import NewButton from 'components/NewButton'
   
 const NextStepsColumn = ({nextSteps, setSteps, steps}) => {
   const [newStepFormIsOpen, setNewStepFormIsOpen] = useState(false)
 
   return(
-    <div>
-      <div className='column-header'>
+    <div className='list next-step-list'>
+      <div className='list-header'>
         <h2>Next Steps</h2>
-        <img src={plusSolid} className='plus-solid' onClick={() => setNewStepFormIsOpen(true)} />
+        <NewButton setNewItemFormIsOpen={setNewStepFormIsOpen} />
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {newStepFormIsOpen && 
           <NewStepForm 
             setNewStepFormIsOpen={setNewStepFormIsOpen}

@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 
-import plusSolid from 'assets/images/plus-solid.svg'
 import NewContactForm from './NewContactForm'
 import ContactCard from './ContactCard'
+import NewButton from 'components/NewButton'
   
 const ContactColumn = ({jobApplicationContacts}) => {
   const [newContactFormIsOpen, setNewContactFormIsOpen] = useState(false)
   const [contacts, setContacts] = useState(jobApplicationContacts)
 
   return(
-    <div className='col-4'>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Contacts</h2>
-        <img src={plusSolid} className='plus-solid' onClick={() => setNewContactFormIsOpen(true)} />
+        <NewButton setNewItemFormIsOpen={setNewContactFormIsOpen} />
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {newContactFormIsOpen && 
           <NewContactForm 
             setNewContactFormIsOpen={setNewContactFormIsOpen}

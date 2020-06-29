@@ -4,11 +4,11 @@ import StepCard from './StepCard'
   
 const PastStepsColumn = ({pastSteps, steps, setSteps}) => {
   return(
-    <div>
-      <div className='column-header'>
+    <div className='list'>
+      <div className='list-header'>
         <h2>Past Steps</h2>
       </div>
-      <div className='column-body'>
+      <div className='list-body'>
         {pastSteps.map(step => 
           <StepCard
             key={step.id}
