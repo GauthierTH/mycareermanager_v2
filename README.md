@@ -1,4 +1,4 @@
-# My Career Manager (WIP)
+# My Career Manager v2 (WIP)
 
 My Career Manager helps you centralize and organize your job search by keeping track of your job applications.
 
