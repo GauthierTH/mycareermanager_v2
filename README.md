@@ -4,6 +4,9 @@
 
 My Career Manager helps you centralize and organize your job search by keeping track of your job applications.
 
+## My Career Manager v1
+https://github.com/berenice-b/my_career_manager
+
 ## Stack
 * Ruby 2.7.0
 * Rails 6.0.3 (API)
