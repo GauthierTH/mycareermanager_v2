@@ -24,6 +24,7 @@ https://github.com/berenice-b/my_career_manager
 * rails db:create
 * rails db:migrate
 * rails db:seed
+* rake start
 
 ### Staging
 https://mycareermanager-staging.herokuapp.com/
