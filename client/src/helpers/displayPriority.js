@@ -3,7 +3,7 @@ import React from 'react'
 import starRegular from '../assets/images/star-regular.svg'
 import starSolid from '../assets/images/star-solid.svg'
 
-export const priorityHelper = {
+export const displayPriorityHelper = {
   low: 
     <div>
       <img src={starSolid} className='star-icon' alt='star-solid' />

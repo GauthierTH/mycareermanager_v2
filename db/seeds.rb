@@ -40,7 +40,7 @@ user = User.create(
   )
 
   Step.create(
-    category: :application_sent,
+    category: :send_application,
     date: Faker::Date.between(from: 30.days.ago, to: DateTime.now),
     description: Faker::Lorem.sentences(number: 2),
     is_done: true,
@@ -59,7 +59,7 @@ user = User.create(
   )
 
   Step.create(
-    category: :application_sent,
+    category: :send_application,
     date: Faker::Date.between(from: 30.days.ago, to: 15.days.ago),
     description: Faker::Lorem.sentences(number: 2),
     is_done: true,
@@ -67,7 +67,7 @@ user = User.create(
   )
 
   Step.create(
-    category: Step.categories.keys.reject{ |category| category == 'application_sent' }.sample,
+    category: Step.categories.keys.reject{ |category| category == 'send_application' }.sample,
     date: Faker::Date.between(from: 15.days.ago, to: DateTime.now),
     description: Faker::Lorem.sentences(number: 2),
     is_done: true,
@@ -75,7 +75,7 @@ user = User.create(
   )
 
   Step.create(
-    category: Step.categories.keys.reject{ |category| category == 'application_sent' }.sample,
+    category: Step.categories.keys.reject{ |category| category == 'send_application' }.sample,
     date: Faker::Date.between(from: DateTime.now, to: DateTime.now + 30.days),
     description: Faker::Lorem.sentences(number: 2),
     is_done: false,

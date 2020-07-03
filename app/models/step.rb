@@ -29,7 +29,7 @@ class Step < ApplicationRecord
     phone_call: 'phone_call',
     technical_test: 'technical_test',
     follow_up: 'follow_up',
-    application_sent: 'application_sent'
+    send_application: 'send_application'
   }.freeze
 
   scope :next_steps, -> { where(is_done: false).order(:date) }

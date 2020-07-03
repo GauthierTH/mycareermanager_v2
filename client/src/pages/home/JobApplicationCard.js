@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-import { priorityHelper } from 'helpers/priority'
+import { displayPriorityHelper } from 'helpers/displayPriority'
   
 const JobApplicationCard = ({company_name, position, priority, id}) => {
   return(
@@ -11,7 +11,7 @@ const JobApplicationCard = ({company_name, position, priority, id}) => {
         <div>{company_name}</div>
       </div>
       <div>
-        {priorityHelper[priority]}
+        {displayPriorityHelper[priority]}
       </div>
     </div>
   )
