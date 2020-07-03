@@ -3,5 +3,5 @@ export const formatStepCategoryHelper = {
   interview: 'interview',
   technical_test: 'technical test',
   follow_up: 'follow-up',
-  application_sent: 'send application'
+  send_application: 'send application'
 }

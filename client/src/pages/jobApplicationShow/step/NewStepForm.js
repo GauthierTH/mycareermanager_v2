@@ -39,7 +39,7 @@ const NewStepForm = ({setNewStepFormIsOpen, setSteps, steps}) => {
                 <option value='phone_call'>phone call</option>
                 <option value='technical_test'>technical test</option>
                 <option value='follow_up'>follow-up</option>
-                <option value='application_sent'>application sent</option>
+                <option value='send_application'>send application</option>
               </select>
             </td>
           </tr>
