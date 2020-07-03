@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from "react-router-dom";
 
-import { longNameHelper } from 'helpers/longName'
+import { shortenStringHelper } from 'helpers/shortenString'
   
 const NextStepCard = ({category, date, company_name, position, jobApplicationId}) => {
   return(
@@ -13,7 +13,7 @@ const NextStepCard = ({category, date, company_name, position, jobApplicationId}
       </div>
       <div className='justify-content-between align-items-center'>
         <div className='badge orange-light-background mt-1'>{moment(date).format('ddd, MMM D, h:mm a')}</div>
-        <div>{longNameHelper(company_name, 20)}</div>
+        <div>{shortenStringHelper(company_name, 20)}</div>
       </div>
     </div>
   )
