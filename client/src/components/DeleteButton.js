@@ -9,7 +9,7 @@ const DeleteButton = ({deleteItem}) => {
     cursor: 'pointer'
   }
 
-  return <img src={timesSolid} style={style} onClick={deleteItem} />
+  return <img src={timesSolid} style={style} onClick={() => { if (window.confirm('Are you sure to delete this item?')) deleteItem() }} />
 }
   
 export default DeleteButton
