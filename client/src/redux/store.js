@@ -1,5 +1,6 @@
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 
 import userReducer from './user/userReducer';
 
