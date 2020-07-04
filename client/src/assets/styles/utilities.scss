@@ -2,6 +2,10 @@
   margin-top: 0.25rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .justify-content-end {
   display: flex;
   justify-content: flex-end;
@@ -10,6 +14,11 @@
 .justify-content-between {
   display: flex;
   justify-content: space-between;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
 }
 
 .m-0 {
@@ -44,4 +53,16 @@
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.w-100 {
+  width: 100%
 }
