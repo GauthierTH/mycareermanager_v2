@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import moment from 'moment'
 
-import LoginForm from 'components/LoginForm'
+import LoginPage from 'pages/login/LoginPage'
 import NextStepsColumn from './NextStepsColumn'
 import JobApplicationSection from './JobApplicationSection'
 
@@ -10,7 +10,7 @@ const Home = () => {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated)
 
   if(!isAuthenticated) {
-    return <div className='row justify-content-center'><LoginForm /></div>
+    return <LoginPage />
   }
 
   return(
