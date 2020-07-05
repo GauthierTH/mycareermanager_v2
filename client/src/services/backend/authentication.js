@@ -29,6 +29,7 @@ export const login = (data) => {
       },
       body: JSON.stringify({ user: data })
     });
+    console.log(response)
     let responseJson = await response.json()
 
     if (responseJson.status === "error") {
